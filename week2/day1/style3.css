@@ -1,0 +1,28 @@
+
+.container{
+    display: flex;
+    align-items: center;
+    color: white;
+    text-align: center;
+    width: 100vh;
+}
+
+.one, .two, .three{
+    height: 50px;
+}
+
+.one{
+    background-color: rgba(148, 82, 211, 0.814);
+    flex-grow: 1;
+}
+
+.two{
+    background-color: rgba(59, 152, 198, 0.781);
+    flex-grow: 5;
+}
+
+.three{
+    flex-grow: 5;
+    background-color: rgb(239, 95, 95);
+}
+

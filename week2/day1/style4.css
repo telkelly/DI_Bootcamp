@@ -1,0 +1,23 @@
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; 
+    height: 100vh;
+    color: white;
+}
+
+.one, .two, .three{
+    background-color: rgba(59, 152, 198, 0.781);
+    text-align: center;
+    height: 100%;
+}
+
+.one, .three{
+    width: 60%;
+}
+
+.two{
+    width: 100%;
+}
