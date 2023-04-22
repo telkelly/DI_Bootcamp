@@ -1,21 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <div id="outer">
-        <div id="inner">
-            <h1 class="header" id="header">
-                Walking the DOW tree
-            </h1>
-            <p class="text" id="text1">text1 text1 text1</p>
-            <p class="text" id="text2">text2 text2 text2</p>
+    <style>
+      .main-bg {
+        display: flex;
+      }
+      .inner-div {
+        padding: 30px;
+        border: 1px solid #000;
+        margin: 20px;
+        text-align: center;
+      }
+
+      #div1{
+        padding: 50px;
+        border: 1px solid #000;
+        background-color: orange;
+      }
+      #div2{
+        padding: 50px;
+        border: 1px solid #000;
+        background-color: greenyellow;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <button onclick="myOnClick()">Click me!!</button>
+    <input type="text" oninput="getValue(event)">
+    <div onclick="getDivText(event)">text text text</div> -->
+    <!-- <button onclick="getRobots()">Show robots</button>
+    <div id="root" class="main-bg"></div> -->
+    <!-- <div id="div1" onmouseover="changeColor(event)" onmouseleave="changeColorBack(event)"></div> -->
+    <div id="div1">
+        <div id="div2">
+
         </div>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

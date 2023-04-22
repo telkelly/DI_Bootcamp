@@ -1,46 +1,76 @@
-// const div = document.getElementById('outer')
-// console.log(div)
-// const p = document.getElementsByClassName('text')
-// const divs = document.getElementsByTagName('div')
-// console.log(divs);
-
-// exercise-1
-const inner = document.getElementById('inner')
-const firstElemChild = inner.firstElementChild;
-const firstChild = inner.firstChild;
-console.log(firstChild)
-const lastElemChild = inner.lastElementChild;
-const lastChild = inner.lastChild;
-console.log(lastChild);
-const getBody = document.body;
-const nextElemSibling = getBody.nextElementSibling;
-const nextSibling = getBody.nextSibling;
-const previousElemSibling = getBody.previousElementSibling;
-const previousSibling = inner.previousSibling;
-console.log(previousSibling);
-const parentNode = inner.parentNode;
-console.log(parentNode);
-const childNotes = inner.childNodes;
-console.log(childNotes);
-
-// exercise-2
+// const myOnClick = () => {
+//     return alert('hello')
+// }
 
 
+// const getValue = (e) => {
+//     console.log(e.target.value);
+// }
 
-firstElemChild.innerText = "I've changed the H1 fron JS"
+// const getDivText = (e) => {
+//     console.log(e.target.innerText);
+// }
 
-console.log(getBody.nodeValue);
+const root = document.getElementById('root')
 
-console.log(getBody.innerText)
+let arr = [
+  { id: 1, user: "John", email: "john@gmail.com" },
+  { id: 2, user: "Sara", email: "sara@gmail.com" },
+  { id: 3, user: "Yasaar", email: "yasaar@gmail.com" },
+  { id: 10, user: "Yeshna", email: "yeshna@gmail.com" },
+  { id: 5, user: "Varshana", email: "varshana@gmail.com" },
+];
 
-console.log(getBody.innerHTML);
+function getRobots() {
+    root.innerHTML = '';
+    for (let i = 0; i < arr.length; i++){
+        let newDiv = document.createElement("div");
+        newDiv.classList.add('inner-div')
 
-lastElemChild.innerHTML = "<h5>Hi I'm newborn here</h5>"
+        let img = document.createElement('img');
+        img.setAttribute('src', `http://robohash.org/${arr[i].id}`);
+        img.style.width = '120px';
+        newDiv.appendChild(img);
 
-lastChild.textContent = "hello";
+        let name = document.createElement('h2');
+        name.innerHTML = arr[i].user;
+        newDiv.appendChild(name);
 
-// exercise - 3
+        let email = document.createElement("h3");
+        email.innerHTML = arr[i].email;
+        newDiv.appendChild(email);
 
-const outer = document.getElementById('outer')
+        root.appendChild(newDiv)
+    }
+}
 
-outer.removeChild(inner)
+
+// function changeColor(e) {
+//   e.target.style.background = 'green'
+// }
+
+// function changeColorBack(e) {
+//   e.target.style.background = "orange";
+// }
+
+const div1 = document.getElementById('div1'); // it was divColor
+// console.log(divColor);
+
+// divColor.addEventListener('mouseover', function (e) {
+//     e.target.style.background = "green";
+// })
+
+// divColor.addEventListener("mouseleave", function (e) {
+//   e.target.style.background = "orange";
+// });
+
+const div2 = document.getElementById('div2')
+
+div1.addEventListener('click', function (e) {
+    alert('soup')
+    e.stopPropagation()
+})
+
+div2.addEventListener("click", function (e) {
+  alert("pasta");
+});

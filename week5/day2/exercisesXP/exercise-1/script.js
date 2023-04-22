@@ -1,13 +1,13 @@
 // exercise-1
 
-const h1 = document.getElementsByTagName('h1');
+const h1 = document.getElementsByTagName("h1")[0];
 const article = document.body.firstElementChild;
 const lastParagr = article.lastElementChild;
 const h2 = article.children[1];
 const h3 = article.children[2];
 const allParagr = document.getElementsByTagName('p');
 console.log(allParagr[1]);
-console.log(h1[0]);
+console.log(h1);
 
 h2.addEventListener('click', function (e) {
     e.target.style.background = 'red';
@@ -25,7 +25,7 @@ function getBold() {
     }
 }
 
-h1[0].addEventListener('mouseover', function (e) {
+h1.addEventListener('mouseover', function (e) {
     let randomNum = Math.floor(Math.random() * 100);
     e.target.style.fontSize = `${randomNum}px`;
 })
