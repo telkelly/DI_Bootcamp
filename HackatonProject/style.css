@@ -108,7 +108,11 @@ body{
 
 .main-div {
   display: flex;
-  justify-content: space-around;
+  margin: 0 auto;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 350px;
 }
 
 .square {

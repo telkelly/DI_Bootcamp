@@ -28,11 +28,38 @@ different.addEventListener("click", function (e) {
 
 function secondLevel() {
   mainDiv.innerHTML = "";
-  let newDivs = [];
-  for (let i = 0; i < 4; i++) {
-      let newDiv = document.createElement("div");
-      newDiv.classList.add('square');
-      mainDiv.appendChild(newDiv)
+  for (let i = 0; i < 6; i++) {
+    let newDiv = document.createElement("div");
+      newDiv.classList.add("square");
+      newDiv.style.background = "rgb(249, 123, 34)";
+    mainDiv.appendChild(newDiv);
   }
-  console.log(newDivs);
+  getRandom();
+    const different = document.getElementsByClassName("different").item(0);
+    different.style.background = "rgb(189, 121, 66)";
+  different.addEventListener("click", function (e) {
+    thirdLevel();
+  });
+}
+
+function thirdLevel() {
+  mainDiv.innerHTML = "";
+  for (let i = 0; i < 9; i++) {
+    let newDiv = document.createElement("div");
+      newDiv.classList.add("square");
+      newDiv.style.background = 'red';
+    mainDiv.appendChild(newDiv);
+  }
+  getRandom();
+    const different = document.getElementsByClassName("different").item(0);
+    different.style.background = 'yellow';
+  different.addEventListener("click", function (e) {
+    thirdLevel();
+  });
+}
+
+function getRandom() {
+  let newDivs = Array.from(mainDiv.children);
+  let randomSquare = newDivs[Math.floor(Math.random() * newDivs.length)];
+  randomSquare.classList.add("different");
 }
