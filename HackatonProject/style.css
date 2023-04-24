@@ -97,6 +97,7 @@ video {
 
 body{
     font-family: 'Rajdhani', sans-serif;
+    background: url(./img/background-1.jpeg) no-repeat;
 }
 
 .title {
@@ -132,11 +133,18 @@ body{
   justify-content: center;
 }
 
+.rules-info{
+  text-align: center;
+  background-color: aqua;
+  border: 5px solid black;
+
+}
+
 .rules-btn {
   font-size: 20px;
   padding: 10px 30px;
-  border-radius: 15px;
+  border-radius: 10px;
   border: none;
   width: 30%;
-  justify-items: center;
+  margin: 20px auto 0;
 }
