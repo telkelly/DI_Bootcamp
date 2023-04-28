@@ -91,20 +91,42 @@ video {
 
 /* google fonts */
 
-@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Sigmar&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 
 /* game-section */
 
-body{
-    font-family: 'Rajdhani', sans-serif;
-    background: url(./img/background-1.jpeg) no-repeat;
+html {
+  height: 100%;
+  background-color: #50c878;
+  font-family: "Indie Flower", cursive;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  /* font-family: "Sigmar", cursive; */
+}
+
+.game-section {
+  margin: 40px auto;
+}
+
+.title-wrap {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 10px;
 }
 
 .title {
-  text-align: center;
   font-size: 45px;
-  padding: 60px 20px;
   font-weight: 500;
+}
+
+.scope{
+  font-size: 18px;
 }
 
 .main-div {
@@ -113,31 +135,36 @@ body{
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  width: 350px;
+  width: 300px;
+  padding: 30px;
+  background-color: #f5f5dc;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 15px -5px rgba(0, 0, 0, 0.69);
 }
 
 .square {
-  width: 95px;
-  height: 95px;
+  width: 75px;
+  height: 75px;
   background-color: rgb(116, 104, 163);
 }
 
 .different {
   background-color: rgb(193, 55, 156);
+  width: 75px;
+  height: 75px;
 }
 
 .rules {
-  margin: 60px 20px;
+  margin: 40px 20px;
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
 }
 
-.rules-info{
+.rules-info {
   text-align: center;
   background-color: aqua;
   border: 5px solid black;
-
 }
 
 .rules-btn {
@@ -146,5 +173,5 @@ body{
   border-radius: 10px;
   border: none;
   width: 30%;
-  margin: 20px auto 0;
+  margin: 0 auto;
 }
