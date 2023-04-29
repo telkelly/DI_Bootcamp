@@ -145,17 +145,18 @@ body {
 .square {
   width: 75px;
   height: 75px;
-  background-color: rgb(116, 104, 163);
+  background-color: #be5a84e8;
 }
 
 .different {
-  background-color: rgb(193, 55, 156);
+  background-color: #c1379c;
   width: 75px;
   height: 75px;
 }
 
 .rules {
-  margin: 40px 20px;
+  margin: 40px auto 20px;
+  width: 300px;
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
@@ -163,15 +164,32 @@ body {
 
 .rules-info {
   text-align: center;
-  background-color: aqua;
-  border: 5px solid black;
+  background-color: #7850c848;
+  border: 3px ridge #C87850;
 }
 
 .rules-btn {
   font-size: 20px;
-  padding: 10px 30px;
+  padding: 10px 20px;
   border-radius: 10px;
   border: none;
   width: 30%;
-  margin: 0 auto;
+  margin: 10px auto 0;
+}
+
+.game-over{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.try-again{
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: black;
+  color: white;
 }
