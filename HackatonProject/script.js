@@ -91,8 +91,6 @@ function secondLevel() {
   });
 }
 
-console.log(scope);
-
 function thirdLevel() {
   scopeCounter();
   mainDiv.innerHTML = "";
@@ -135,14 +133,7 @@ function fifthLevel() {
   scopeCounter();
   mainDiv.innerHTML = "";
   for (let i = 0; i < 30; i++) {
-    let newDiv = document.createElement("div");
-    newDiv.classList.add("square");
-    newDiv.style.borderRadius = "50%";
-    newDiv.style.border = "5px solid grey";
-    newDiv.style.width = "40px";
-    newDiv.style.height = "40px";
-    newDiv.style.background = "#FCC438";
-    mainDiv.appendChild(newDiv);
+    createRoundSquares("40px", "#FCC438", "5px solid grey");
   }
   getRandom();
   const different = document.getElementsByClassName("different").item(0);
@@ -150,11 +141,104 @@ function fifthLevel() {
   different.style.background = "#FDD36A";
   gameOver();
   different.addEventListener("click", function (e) {
-    fifthLevel();
+    sixthLevel();
   });
 }
 
-console.log(scope);
+function sixthLevel() {
+  scopeCounter();
+  mainDiv.innerHTML = "";
+  for (let i = 0; i < 35; i++) {
+    createRoundSquares("35px", "#34C4CB", "5px solid #2AD5B0");
+  }
+  getRandom();
+  const different = document.getElementsByClassName("different").item(0);
+  different.classList.remove("square");
+  different.style.background = "#5DCFD5";
+  gameOver();
+  different.addEventListener("click", function (e) {
+    seventhLevel();
+  });
+}
+
+function seventhLevel() {
+  scopeCounter();
+  mainDiv.innerHTML = "";
+  for (let i = 0; i < 35; i++) {
+    createRoundSquares("35px", "#2AD5B0", "5px solid #8E8BA7");
+  }
+  getRandom();
+  const different = document.getElementsByClassName("different").item(0);
+  different.classList.remove("square");
+  different.style.background = "#55DDC0";
+  gameOver();
+  different.addEventListener("click", function (e) {
+    eighthLevel();
+  });
+}
+
+function eighthLevel() {
+  scopeCounter();
+  mainDiv.innerHTML = "";
+  for (let i = 0; i < 35; i++) {
+    createRoundSquares("35px", "#726E91", "5px solid #F3D83F");
+  }
+  getRandom();
+  const different = document.getElementsByClassName("different").item(0);
+  different.classList.remove("square");
+  different.style.background = "#8E8BA7";
+  gameOver();
+  different.addEventListener("click", function (e) {
+    ninthLevel();
+  });
+}
+
+function ninthLevel() {
+  scopeCounter();
+  mainDiv.innerHTML = "";
+  for (let i = 0; i < 36; i++) {
+    createRoundSquares("35px", "#F0CF0F", "none");
+  }
+  getRandom();
+  const different = document.getElementsByClassName("different").item(0);
+  different.classList.remove("square");
+  different.style.background = "#F3D83F";
+  gameOver();
+  different.addEventListener("click", function (e) {
+    winner();
+  });
+}
+
+function winner() {
+  mainDiv.innerHTML = "";
+  let newDiv = document.createElement("div");
+  let newText = document.createTextNode(
+    "Your vision is amazing! You win!"
+  );
+  let newBtn = document.createElement("button");
+  newBtn.innerHTML = "Start again";
+  let img = document.createElement("img");
+  img.src = "./happycat.png";
+  newDiv.appendChild(newText);
+  newDiv.appendChild(img);
+  newDiv.appendChild(newBtn);
+  newDiv.classList.add("game-over");
+  newBtn.classList.add("try-again");
+  img.style.width = "100px";
+  mainDiv.appendChild(newDiv);
+  newBtn.addEventListener("click", startAgain);
+}
+
+function createRoundSquares(widthAndHeight, squareColor, border) {
+  let newDiv = document.createElement("div");
+  newDiv.classList.add("square");
+  newDiv.style.borderRadius = "50%";
+  newDiv.style.border = border;
+  newDiv.style.width = widthAndHeight;
+  newDiv.style.height = widthAndHeight;
+  newDiv.style.background = squareColor;
+  mainDiv.appendChild(newDiv);
+}
 
 function getRandom() {
   let newDivs = Array.from(mainDiv.children);
