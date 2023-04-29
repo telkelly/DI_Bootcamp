@@ -19,17 +19,19 @@ function scopeCounter() {
 rulesBtn.addEventListener("click", function (e) {
   e.preventDefault();
   if (isCalledOnce) {
-    const newParag = document.createElement("p");
+    const newDiv = document.createElement("div");
     const newText = document.createTextNode(
       "The game is about to find different square color within these squares. You'll gain one point when find it. Every level is getting harder so try to gain as much point as you can."
     );
-    newParag.append(newText);
-    newParag.classList.add("rules-info");
-    rulesDiv.appendChild(newParag);
+    newDiv.append(newText);
+    newDiv.classList.add("rules-info");
+    mainDiv.appendChild(newDiv);
+    e.target.style.background = "#E4E4E4";
     isCalledOnce = false;
   } else {
-    rulesDiv.removeChild(rulesDiv.lastElementChild);
+    mainDiv.removeChild(mainDiv.lastElementChild);
     isCalledOnce = true;
+    e.target.style.background = "white";
   }
 });
 
@@ -39,11 +41,54 @@ different.addEventListener("click", function (e) {
   secondLevel();
 });
 
+function winner() {
+  mainDiv.innerHTML = "";
+  let confetti = document.createElement('div');
+  confetti.classList.add('confetti')
+  for (let i = 0; i < 13; i++){
+    let newDiv = document.createElement("div");
+    mainDiv.appendChild(newDiv);
+    newDiv.classList.add('confetti-piece')
+  }
+  mainDiv.style.background = "DDD8E4";
+  let newDiv = document.createElement("div");
+  let newText = document.createTextNode("Your vision is amazing! You win!");
+  let newBtn = document.createElement("button");
+  newBtn.innerHTML = "Start again";
+  let img = document.createElement("img");
+  img.src = "./happycat.png";
+  newDiv.appendChild(newText);
+  newDiv.appendChild(img);
+  newDiv.appendChild(newBtn);
+  newDiv.classList.add("game-over");
+  newBtn.classList.add("try-again");
+  img.style.width = "100px";
+  mainDiv.appendChild(newDiv);
+  newBtn.addEventListener("click", startAgain);
+}
+
+function createRoundSquares(widthAndHeight, squareColor) {
+  let newDiv = document.createElement("div");
+  newDiv.classList.add("square");
+  newDiv.style.borderRadius = "50%";
+  newDiv.style.width = widthAndHeight;
+  newDiv.style.height = widthAndHeight;
+  newDiv.style.background = squareColor;
+  mainDiv.appendChild(newDiv);
+}
+
+function getRandom() {
+  let newDivs = Array.from(mainDiv.children);
+  let randomSquare = newDivs[Math.floor(Math.random() * newDivs.length)];
+  randomSquare.classList.add("different");
+}
+
 function gameOver() {
   for (let square of squares) {
     if (square) {
       square.addEventListener("click", function (e) {
         mainDiv.innerHTML = "";
+        mainDiv.style.background = "#DDD8E4";
         let newDiv = document.createElement("div");
         let newText = document.createTextNode(
           "You did well, but it is the end. Try again, champion!"
@@ -75,7 +120,7 @@ function startAgain() {
 
 function secondLevel() {
   mainDiv.innerHTML = "";
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 9; i++) {
     let newDiv = document.createElement("div");
     newDiv.classList.add("square");
     newDiv.style.background = "#F0A00F";
@@ -113,16 +158,14 @@ function thirdLevel() {
 function forthLevel() {
   scopeCounter();
   mainDiv.innerHTML = "";
+  mainDiv.style.background = "#787878";
   for (let i = 0; i < 12; i++) {
-    let newDiv = document.createElement("div");
-    newDiv.classList.add("square");
-    newDiv.style.background = "#9D626F";
-    mainDiv.appendChild(newDiv);
+    createRoundSquares("70px", "#FFDB1B");
   }
   getRandom();
   const different = document.getElementsByClassName("different").item(0);
   different.classList.remove("square");
-  different.style.background = "#B1818C";
+  different.style.background = "#E7C300";
   gameOver();
   different.addEventListener("click", function (e) {
     fifthLevel();
@@ -132,8 +175,8 @@ function forthLevel() {
 function fifthLevel() {
   scopeCounter();
   mainDiv.innerHTML = "";
-  for (let i = 0; i < 30; i++) {
-    createRoundSquares("40px", "#FCC438", "5px solid grey");
+  for (let i = 0; i < 20; i++) {
+    createRoundSquares("50px", "#FCC438");
   }
   getRandom();
   const different = document.getElementsByClassName("different").item(0);
@@ -148,8 +191,9 @@ function fifthLevel() {
 function sixthLevel() {
   scopeCounter();
   mainDiv.innerHTML = "";
-  for (let i = 0; i < 35; i++) {
-    createRoundSquares("35px", "#34C4CB", "5px solid #2AD5B0");
+  mainDiv.style.background = "#2C2323";
+  for (let i = 0; i < 30; i++) {
+    createRoundSquares("35px", "#34C4CB");
   }
   getRandom();
   const different = document.getElementsByClassName("different").item(0);
@@ -164,8 +208,8 @@ function sixthLevel() {
 function seventhLevel() {
   scopeCounter();
   mainDiv.innerHTML = "";
-  for (let i = 0; i < 35; i++) {
-    createRoundSquares("35px", "#2AD5B0", "5px solid #8E8BA7");
+  for (let i = 0; i < 36; i++) {
+    createRoundSquares("30px", "#2AD5B0");
   }
   getRandom();
   const different = document.getElementsByClassName("different").item(0);
@@ -181,7 +225,7 @@ function eighthLevel() {
   scopeCounter();
   mainDiv.innerHTML = "";
   for (let i = 0; i < 35; i++) {
-    createRoundSquares("35px", "#726E91", "5px solid #F3D83F");
+    createRoundSquares("35px", "#726E91");
   }
   getRandom();
   const different = document.getElementsByClassName("different").item(0);
@@ -196,8 +240,8 @@ function eighthLevel() {
 function ninthLevel() {
   scopeCounter();
   mainDiv.innerHTML = "";
-  for (let i = 0; i < 36; i++) {
-    createRoundSquares("40px", "#F0CF0F", "none");
+  for (let i = 0; i < 42; i++) {
+    createRoundSquares("30px", "#F0CF0F");
   }
   getRandom();
   const different = document.getElementsByClassName("different").item(0);
@@ -207,41 +251,4 @@ function ninthLevel() {
   different.addEventListener("click", function (e) {
     winner();
   });
-}
-
-function winner() {
-  mainDiv.innerHTML = "";
-  let newDiv = document.createElement("div");
-  let newText = document.createTextNode(
-    "Your vision is amazing! You win!"
-  );
-  let newBtn = document.createElement("button");
-  newBtn.innerHTML = "Start again";
-  let img = document.createElement("img");
-  img.src = "./happycat.png";
-  newDiv.appendChild(newText);
-  newDiv.appendChild(img);
-  newDiv.appendChild(newBtn);
-  newDiv.classList.add("game-over");
-  newBtn.classList.add("try-again");
-  img.style.width = "100px";
-  mainDiv.appendChild(newDiv);
-  newBtn.addEventListener("click", startAgain);
-}
-
-function createRoundSquares(widthAndHeight, squareColor, border) {
-  let newDiv = document.createElement("div");
-  newDiv.classList.add("square");
-  newDiv.style.borderRadius = "50%";
-  newDiv.style.border = border;
-  newDiv.style.width = widthAndHeight;
-  newDiv.style.height = widthAndHeight;
-  newDiv.style.background = squareColor;
-  mainDiv.appendChild(newDiv);
-}
-
-function getRandom() {
-  let newDivs = Array.from(mainDiv.children);
-  let randomSquare = newDivs[Math.floor(Math.random() * newDivs.length)];
-  randomSquare.classList.add("different");
 }
