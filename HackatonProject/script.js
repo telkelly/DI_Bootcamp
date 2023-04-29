@@ -197,7 +197,7 @@ function ninthLevel() {
   scopeCounter();
   mainDiv.innerHTML = "";
   for (let i = 0; i < 36; i++) {
-    createRoundSquares("35px", "#F0CF0F", "none");
+    createRoundSquares("40px", "#F0CF0F", "none");
   }
   getRandom();
   const different = document.getElementsByClassName("different").item(0);
