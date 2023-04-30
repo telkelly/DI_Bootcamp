@@ -55,8 +55,7 @@ function wrongAnswer(e) {
   e.target.style.border = "2px solid red";
 }
 
-function winner() {
-  mainDiv.innerHTML = "";
+function addConfetti() {
   let confetti = document.createElement("div");
   confetti.classList.add("confetti");
   for (let i = 0; i < 13; i++) {
@@ -64,6 +63,11 @@ function winner() {
     mainDiv.appendChild(newDiv);
     newDiv.classList.add("confetti-piece");
   }
+}
+
+function winner() {
+  mainDiv.innerHTML = "";
+  addConfetti();
   let newDiv = document.createElement("div");
   let newText = document.createTextNode("Your vision is amazing! You win!");
   let newBtn = document.createElement("button");
@@ -107,7 +111,6 @@ function gameOver() {
     if (square) {
       square.addEventListener("click", function (e) {
         if (e.target) {
-          console.log("what");
           wrongAnswer(e);
           livesCounter();
           if (wrongAnswers >= maxWrongAnswers) {
