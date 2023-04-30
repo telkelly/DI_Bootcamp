@@ -4,8 +4,11 @@ const rulesBtn = document.getElementById("rules-btn");
 const rulesDiv = document.getElementsByClassName("rules").item(0);
 const mainDiv = document.getElementsByClassName("main-div").item(0);
 const counter = document.getElementById("counter");
+const lives = document.getElementById("lives");
 
-console.log(counter);
+let wrongAnswers = 0;
+let textLives = 3;
+const maxWrongAnswers = 3;
 
 let scope = 0;
 let isCalledOnce = true;
@@ -33,7 +36,6 @@ rulesBtn.addEventListener("click", function (e) {
     isCalledOnce = true;
     e.target.style.background = "white";
   }
-  
 });
 
 different.addEventListener("click", function (e) {
@@ -47,6 +49,10 @@ different.addEventListener("click", function (e) {
 
 function rightAnswer(e) {
   e.target.style.border = "2px solid green";
+}
+
+function wrongAnswer(e) {
+  e.target.style.border = "2px solid red";
 }
 
 function winner() {
@@ -91,28 +97,42 @@ function getRandom() {
   randomSquare.classList.add("different");
 }
 
+function livesCounter() {
+  wrongAnswers++;
+  lives.textContent = ` ${--textLives}`;
+}
+
 function gameOver() {
   for (let square of squares) {
     if (square) {
       square.addEventListener("click", function (e) {
-        mainDiv.innerHTML = "";
-        mainDiv.style.background = "#DDD8E4";
-        let newDiv = document.createElement("div");
-        let newText = document.createTextNode(
-          "You did well, but it is the end. Try again, champion!"
-        );
-        let newBtn = document.createElement("button");
-        newBtn.innerHTML = "Try again";
-        let img = document.createElement("img");
-        img.src = "./sadcat.png";
-        newDiv.appendChild(newText);
-        newDiv.appendChild(img);
-        newDiv.appendChild(newBtn);
-        newDiv.classList.add("game-over");
-        newBtn.classList.add("try-again");
-        img.style.width = "100px";
-        mainDiv.appendChild(newDiv);
-        newBtn.addEventListener("click", startAgain);
+        if (e.target) {
+          console.log("what");
+          wrongAnswer(e);
+          livesCounter()
+          if (wrongAnswers >= maxWrongAnswers) {
+            setTimeout(() => {
+              mainDiv.innerHTML = "";
+              mainDiv.style.background = "#DDD8E4";
+              let newDiv = document.createElement("div");
+              let newText = document.createTextNode(
+                "You did well, but it is the end. Try again, champion!"
+              );
+              let newBtn = document.createElement("button");
+              newBtn.innerHTML = "Try again";
+              let img = document.createElement("img");
+              img.src = "./sadcat.png";
+              newDiv.appendChild(newText);
+              newDiv.appendChild(img);
+              newDiv.appendChild(newBtn);
+              newDiv.classList.add("game-over");
+              newBtn.classList.add("try-again");
+              img.style.width = "100px";
+              mainDiv.appendChild(newDiv);
+              newBtn.addEventListener("click", startAgain);
+            }, 1000);
+          }
+        }
       });
     } else {
       return false;
@@ -123,6 +143,9 @@ function gameOver() {
 function startAgain() {
   scope = 0;
   counter.textContent = scope;
+  wrongAnswers = 0;
+  textLives = 3;
+  lives.textContent = ` ${textLives}`;
   secondLevel();
 }
 
