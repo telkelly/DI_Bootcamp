@@ -24,7 +24,7 @@ rulesBtn.addEventListener("click", function (e) {
   if (isCalledOnce) {
     const newDiv = document.createElement("div");
     const newText = document.createTextNode(
-      "The game is about to find different square color within these squares. You'll gain one point when find it. Every level is getting harder so try to gain as much point as you can."
+      "The game is to find one color slightly different from other colors. You have three attempts during the whole game to find this color. The game consists of 8 levels."
     );
     newDiv.append(newText);
     newDiv.classList.add("rules-info");
@@ -109,7 +109,7 @@ function gameOver() {
         if (e.target) {
           console.log("what");
           wrongAnswer(e);
-          livesCounter()
+          livesCounter();
           if (wrongAnswers >= maxWrongAnswers) {
             setTimeout(() => {
               mainDiv.innerHTML = "";
