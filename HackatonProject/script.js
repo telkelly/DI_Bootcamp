@@ -33,24 +33,31 @@ rulesBtn.addEventListener("click", function (e) {
     isCalledOnce = true;
     e.target.style.background = "white";
   }
+  
 });
 
 different.addEventListener("click", function (e) {
   e.preventDefault();
-  scopeCounter();
-  secondLevel();
+  rightAnswer(e);
+  setTimeout(() => {
+    scopeCounter();
+    secondLevel();
+  }, 1000);
 });
+
+function rightAnswer(e) {
+  e.target.style.border = "2px solid green";
+}
 
 function winner() {
   mainDiv.innerHTML = "";
-  let confetti = document.createElement('div');
-  confetti.classList.add('confetti')
-  for (let i = 0; i < 13; i++){
+  let confetti = document.createElement("div");
+  confetti.classList.add("confetti");
+  for (let i = 0; i < 13; i++) {
     let newDiv = document.createElement("div");
     mainDiv.appendChild(newDiv);
-    newDiv.classList.add('confetti-piece')
+    newDiv.classList.add("confetti-piece");
   }
-  mainDiv.style.background = "DDD8E4";
   let newDiv = document.createElement("div");
   let newText = document.createTextNode("Your vision is amazing! You win!");
   let newBtn = document.createElement("button");
@@ -64,6 +71,7 @@ function winner() {
   newBtn.classList.add("try-again");
   img.style.width = "100px";
   mainDiv.appendChild(newDiv);
+  mainDiv.style.backgroundColor = "#DDD8E4";
   newBtn.addEventListener("click", startAgain);
 }
 
@@ -132,7 +140,10 @@ function secondLevel() {
   different.style.background = "#F2B039";
   gameOver();
   different.addEventListener("click", function (e) {
-    thirdLevel();
+    rightAnswer(e);
+    setTimeout(() => {
+      thirdLevel();
+    }, 1000);
   });
 }
 
@@ -151,7 +162,10 @@ function thirdLevel() {
   different.style.background = "#5EA2D4";
   gameOver();
   different.addEventListener("click", function (e) {
-    forthLevel();
+    rightAnswer(e);
+    setTimeout(() => {
+      forthLevel();
+    }, 1000);
   });
 }
 
@@ -160,15 +174,18 @@ function forthLevel() {
   mainDiv.innerHTML = "";
   mainDiv.style.background = "#787878";
   for (let i = 0; i < 12; i++) {
-    createRoundSquares("70px", "#FFDB1B");
+    createRoundSquares("70px", "#9FB24D");
   }
   getRandom();
   const different = document.getElementsByClassName("different").item(0);
   different.classList.remove("square");
-  different.style.background = "#E7C300";
+  different.style.background = "#B2C171";
   gameOver();
   different.addEventListener("click", function (e) {
-    fifthLevel();
+    rightAnswer(e);
+    setTimeout(() => {
+      fifthLevel();
+    }, 1000);
   });
 }
 
@@ -184,7 +201,10 @@ function fifthLevel() {
   different.style.background = "#FDD36A";
   gameOver();
   different.addEventListener("click", function (e) {
-    sixthLevel();
+    rightAnswer(e);
+    setTimeout(() => {
+      sixthLevel();
+    }, 1000);
   });
 }
 
@@ -201,7 +221,10 @@ function sixthLevel() {
   different.style.background = "#5DCFD5";
   gameOver();
   different.addEventListener("click", function (e) {
-    seventhLevel();
+    rightAnswer(e);
+    setTimeout(() => {
+      seventhLevel();
+    }, 1000);
   });
 }
 
@@ -217,7 +240,10 @@ function seventhLevel() {
   different.style.background = "#55DDC0";
   gameOver();
   different.addEventListener("click", function (e) {
-    eighthLevel();
+    rightAnswer(e);
+    setTimeout(() => {
+      eighthLevel();
+    }, 1000);
   });
 }
 
@@ -233,7 +259,10 @@ function eighthLevel() {
   different.style.background = "#8E8BA7";
   gameOver();
   different.addEventListener("click", function (e) {
-    ninthLevel();
+    rightAnswer(e);
+    setTimeout(() => {
+      ninthLevel();
+    }, 1000);
   });
 }
 
@@ -249,6 +278,9 @@ function ninthLevel() {
   different.style.background = "#F3D83F";
   gameOver();
   different.addEventListener("click", function (e) {
-    winner();
+    rightAnswer(e);
+    setTimeout(() => {
+      winner();
+    }, 1000);
   });
 }
