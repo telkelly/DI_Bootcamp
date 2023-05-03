@@ -31,6 +31,8 @@ Object.keys(gameInfo).forEach((key) => {
   usernames.push(`${gameInfo[key].username}!`);
 });
 
+console.log(usernames);
+
 let winners = [];
 
 Object.keys(gameInfo).forEach((key) => {
@@ -41,6 +43,17 @@ Object.keys(gameInfo).forEach((key) => {
 
 //console.log(winners);
 
+let scope = [];
+let sum;
+
 Object.keys(gameInfo).forEach((key) => {
-    console.log(gameInfo[key].score);
+  scope.push(gameInfo[key].score);
 });
+
+sum = scope.reduce(reducer)
+
+function reducer(acc, curr) {
+    return acc + curr;
+}
+
+console.log(sum);
