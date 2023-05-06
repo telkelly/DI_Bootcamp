@@ -1,7 +1,12 @@
-const userdNameA = document.getElementById("usersName");
+const navbe = document.getElementById("navbar");
 
 (function (name) {
-    let newUl = document.createElement('ul');
-    
-    userdNameA.innerText = name;
-})('Mark')
+  let newLi = document.createElement("li");
+  let newA = document.createElement("a");
+  let newText = (document.textContent = name);
+  newLi.appendChild(newA);
+  newA.append(newText);
+  newA.classList.add("nav-link");
+  newLi.classList.add("nav-item");
+  navbar.appendChild(newLi);
+})("Mark");

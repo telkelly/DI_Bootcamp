@@ -12,6 +12,15 @@
         <button onclick="generateRandomQuote()">Generate Quote</button>
         <div id="quote" class="quote">
         </div>
+        <input id="inputQuote" type="text" placeholder="Type a quote">
+        <input id="inputAuthor" type="text" placeholder="Type the author">
+        <button id="newQuote" onclick="addNewQuote()">Add a new quote</button>
+        <button id="numOfCharactersWSpaces" onclick="numOfCharactersWSpaces()">Give the number of characters of quote with spaces</button>
+        <span id="numOfCharactersWSpacesSpan"></span>
+        <button id="numOfCharactersWithoutSpaces" onclick="numOfCharactersWithoutSpaces()">Give the number of characters of quote without spaces</button>
+        <span id="numOfCharactersWithoutSpacesSpan"></span>
+        <button id="numOfWords" onclick="numOfWords()">Give number of words</button>
+        <span id="numOfWordsSpan"></span>
     </div>
     <script src="script.js"></script>
 </body>
