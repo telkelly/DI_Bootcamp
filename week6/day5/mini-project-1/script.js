@@ -113,19 +113,17 @@ const numOfWords = () => {
 
 searchBtn.addEventListener("click", function () {
   const nameOfAuthor = document.getElementById("nameOfAuthor").value;
-  const filteredQuote = document.getElementById("filteredQuote");
-  const filteredAuthor = document.getElementById("filteredAuthor");
-  const filter = document.getElementsByClassName("filter").item(0);
+  const filterQuote = document.getElementsByClassName("filter-quote").item(0);
   quotes.forEach((item) => {
-    //  console.log(item.author);
-    if (item.author == nameOfAuthor) {
-      filter.innerHTML = item.quote;
-      filter.innerHTML = item.author;
-     // filteredQuote.innerHTML = item.quote;
-     // filteredAuthor.innerHTML = item.author;
-      console.log(5);
+    if (item.author === nameOfAuthor) {
+      let newH2 = document.createElement('h2');
+      let newH4 = document.createElement("h4");
+      newH2.textContent = item.quote;
+      newH4.textContent = item.author
+      filterQuote.appendChild(newH2);
+      filterQuote.appendChild(newH4);
     } else {
-      console.log(6);
+      return false;
     }
   });
 });
