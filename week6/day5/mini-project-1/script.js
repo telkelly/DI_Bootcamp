@@ -85,6 +85,7 @@ const numOfCharactersWSpaces = () => {
   const numOfCharactersWSpacesSpan = document.getElementById(
     "numOfCharactersWSpacesSpan"
   );
+  numOfCharactersWSpacesSpan.innerHTML = '';
   let store = 0;
   for (let one of word) {
     store++;
@@ -93,9 +94,10 @@ const numOfCharactersWSpaces = () => {
 };
 
 const numOfCharactersWithoutSpaces = () => {
-  const numOfCharactersWSpacesSpan = document.getElementById(
+  let numOfCharactersWSpacesSpan = document.getElementById(
     "numOfCharactersWithoutSpacesSpan"
   );
+  numOfCharactersWSpacesSpan.innerHTML = "";
   let store = 0;
   for (let one of word) {
     store++;
@@ -108,6 +110,7 @@ const numOfCharactersWithoutSpaces = () => {
 
 const numOfWords = () => {
   const numOfWordsSpan = document.getElementById("numOfWordsSpan");
+  numOfWordsSpan.innerHTML = '';
   let arr = word.split(" ");
   let store = 0;
   for (let i = 0; i < arr.length; i++) {
