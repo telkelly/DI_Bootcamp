@@ -1,4 +1,9 @@
 const searchBtn = document.getElementById("search");
+const filter = document.getElementsByClassName("filter").item(0);
+let filterQuoteH3 = document.getElementById("filterQuote");
+let filterAuthorH4 = document.getElementById("filterAuthor");
+const previousBtn = document.getElementById("previousBtn");
+const nextBtn = document.getElementById("nextBtn");
 
 let quotes = [
   {
@@ -111,19 +116,47 @@ const numOfWords = () => {
   return numOfWordsSpan.append(store);
 };
 
+let currentQuoteIndex = 0;
+let foundedAuthors = [];
+
 searchBtn.addEventListener("click", function () {
   const nameOfAuthor = document.getElementById("nameOfAuthor").value;
-  const filterQuote = document.getElementsByClassName("filter-quote").item(0);
+  // const filterQuote = document.getElementsByClassName("filter-quote").item(0);
   quotes.forEach((item) => {
     if (item.author === nameOfAuthor) {
-      let newH2 = document.createElement('h2');
-      let newH4 = document.createElement("h4");
-      newH2.textContent = item.quote;
-      newH4.textContent = item.author
-      filterQuote.appendChild(newH2);
-      filterQuote.appendChild(newH4);
+      foundedAuthors.push({
+        id: item.id,
+        author: item.author,
+        quote: item.quote,
+      });
+      // let newH2 = document.createElement("h2");
+      // let newH4 = document.createElement("h4");
+      // newH2.textContent
+      // newH4.textContent
     } else {
       return false;
     }
   });
+  filterQuoteH3.textContent = foundedAuthors[currentQuoteIndex].quote;
+  filterAuthorH4.textContent = foundedAuthors[currentQuoteIndex].author;
+});
+
+console.log(foundedAuthors);
+
+nextBtn.addEventListener("click", function (e) {
+  currentQuoteIndex++;
+  if (currentQuoteIndex >= foundedAuthors.length) {
+    currentQuoteIndex = 0;
+  }
+  filterQuoteH3.textContent = foundedAuthors[currentQuoteIndex].quote;
+  filterAuthorH4.textContent = foundedAuthors[currentQuoteIndex].author;
+});
+
+previousBtn.addEventListener("click", function (e) {
+  currentQuoteIndex--;
+  if (currentQuoteIndex < 0) {
+    currentQuoteIndex = foundedAuthors.length - 1;
+  }
+  filterQuoteH3.textContent = foundedAuthors[currentQuoteIndex].quote;
+  filterAuthorH4.textContent = foundedAuthors[currentQuoteIndex].author;
 });
