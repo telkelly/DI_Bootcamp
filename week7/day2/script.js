@@ -39,12 +39,40 @@ let onlyFullStack = users.filter((i) => {
 console.log(onlyFullStack);
 
 
-let bonus = users.filter((i)=>{
-    if (i.role == 'Full Stack Resident'){
-        return users.map((i) => {
-             i.lastName;
-        })
+let bonus = users.filter(i => {
+    if (i.role == "Full Stack Resident") {
+        return i
     }
-})
+})//.map((i)=>{ i.lastName})
 
 console.log(bonus);
+
+// exercise-3
+
+const epic = ["a", "long", "time", "ago", "in a", "galaxy", "far far", "away"];
+
+let string = epic.reduce((acc, tot) => {
+    return acc + ' ' + tot;
+})
+
+console.log(string);
+
+// exercise-4
+
+const students = [
+  { name: "Ray", course: "Computer Science", isPassed: true },
+  { name: "Liam", course: "Computer Science", isPassed: false },
+  { name: "Jenner", course: "Information Technology", isPassed: true },
+  { name: "Marco", course: "Robotics", isPassed: true },
+  { name: "Kimberly", course: "Artificial Intelligence", isPassed: false },
+  { name: "Jamie", course: "Big Data", isPassed: false },
+];
+
+let passed = Object.values(students).filter(i => {
+    if (i.isPassed === true) {
+        return i.isPassed;
+    }
+}).forEach(i => {
+    console.log(`Congratulate ${i.name} you succseuffuly passed the course ${i.course}
+        `);
+})
