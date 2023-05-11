@@ -1,0 +1,20 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.nav-filter{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    background-color: aquamarine;
+}
+
+.title{
+    font-size: 19px;
+}
+
+#filter{
+    height: 30px;
+}
