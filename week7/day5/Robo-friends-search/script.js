@@ -1,3 +1,6 @@
+const robotsDiv = document.getElementById('robots');
+const filterInput = document.getElementById('filter');
+
 const robots = [
   {
     id: 1,
@@ -70,4 +73,76 @@ const robots = [
     image: "https://robohash.org/10?200x200",
   },
 ];
+
+
+
+function getRobots() {
+    Object.values(robots).forEach(item => {
+        let newDiv = document.createElement('div');
+        newDiv.classList.add('robot')
+        let newImg = document.createElement('img');
+        newImg.setAttribute("src", `${item.image}`);
+        newDiv.appendChild(newImg);
+        
+        let newH3 = document.createElement('h3');
+        newH3.textContent = `${item.name}`;
+        newH3.classList.add('name');
+        newDiv.appendChild(newH3);
+
+        let newH5 = document.createElement("h5");
+        newH5.textContent = `${item.email}`;
+        newH5.classList.add("email");
+        newDiv.appendChild(newH5);
+
+        robotsDiv.appendChild(newDiv);
+    })
+}
+
+getRobots();
+
+filterInput.addEventListener('input', function (e) {
+    let finded = [];
+    Object.values(robots).filter(item => {
+        let name = item.name.toLowerCase();
+        let pick = name.substring(0, 2);
+        if (name.startsWith(e.target.value) || e.target.value==pick && name.includes(e.target.value)) {
+            finded.push(item)
+        } else {
+            return false;
+        }
+    })
+    robotsDiv.innerHTML = "";
+    return createFindedRobot(finded);
+})
+
+function createFindedRobot(arr) {
+    if (arr.length === 0) {
+        let newDiv = document.createElement('div');
+        newDiv.classList.add = 'no-robots';
+        let newText = document.textContent= 'No robots with this name, bro';
+        newDiv.append(newText)
+        robotsDiv.appendChild(newDiv)
+    } else {
+        Object.values(arr).forEach((item) => {
+          let newDiv = document.createElement("div");
+          newDiv.classList.add("robot");
+          let newImg = document.createElement("img");
+          newImg.setAttribute("src", `${item.image}`);
+          newDiv.appendChild(newImg);
+
+          let newH3 = document.createElement("h3");
+          newH3.textContent = `${item.name}`;
+          newH3.classList.add("name");
+          newDiv.appendChild(newH3);
+
+          let newH5 = document.createElement("h5");
+          newH5.textContent = `${item.email}`;
+          newH5.classList.add("email");
+          newDiv.appendChild(newH5);
+
+          robotsDiv.appendChild(newDiv);
+        });
+    }
+    
+}
 
