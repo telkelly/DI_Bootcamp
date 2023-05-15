@@ -248,4 +248,8 @@ body {
   .robot {
     width: 220px;
   }
+
+  .robots{
+    justify-content: flex-start;
+  }
 }
