@@ -125,11 +125,17 @@ table {
 }
 /* End reset styles */
 
+/* google fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
 /* now we use our normal styles */
 
 body {
   margin: 0;
   padding: 0;
+  background: #f3ef266c;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .nav-filter {
@@ -137,7 +143,10 @@ body {
   justify-content: space-around;
   align-items: center;
   height: 60px;
-  background-color: #23f0c7;
+  background-color: #959ce9;
+  box-shadow:  -1px 1px 6px gray;
+  font-weight: 700;
+  letter-spacing: 4px;
 }
 
 .title {
@@ -167,18 +176,21 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 7px;
-  background-color: #ffe347;
+  background: rgb(174,179,238);
+background: radial-gradient(circle, rgba(174,179,238,1) 25%, rgba(178,233,148,1) 100%);
   padding: 15px;
   border-radius: 3px;
 }
 
 .name {
-  font-size: 30px;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 400;
 }
 
 .email {
   font-size: 20px;
+  font-weight: 300;
+  text-transform: lowercase;
 }
 
 /* media-quaries */
@@ -196,7 +208,7 @@ body {
   }
   .name {
     font-size: 28px;
-    font-weight: 700;
+    font-weight: 500;
   }
 }
 
@@ -227,7 +239,6 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 7px;
-    background-color: #ffe347;
     padding: 15px;
     border-radius: 3px;
   }
@@ -237,7 +248,7 @@ body {
   }
   .name {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 600;
   }
 }
 
