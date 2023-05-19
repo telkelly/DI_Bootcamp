@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dailyy</title>
-</head>
-<body>
-    <form action="" onsubmit="getGif()">
-        <label for="category">Category</label>
-        <input type="text">
-        <input type="submit" value="Get gif">
+  </head>
+  <body>
+    <form name="gifForm" action="" onsubmit="getGif(event)">
+      <label for="category">Category</label>
+      <input type="text" name="search" />
+      <input type="submit" value="Get gif" />
     </form>
+    <div id="gif"></div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
