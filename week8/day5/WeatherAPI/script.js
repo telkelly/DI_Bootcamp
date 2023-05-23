@@ -38,13 +38,20 @@ function getData(lat, lon) {
   xhr.responseType = "json";
   xhr.onload = function () {
     const dataMain = xhr.response.main;
-    const weather = document.getElementsByClassName("weather").item(0);
-    let formulaToCelsium = Math.floor(dataMain.temp - 273.15);
+    const weathers = document.getElementsByClassName("weathers").item(0);
+    let formulaToCelsium = `${Math.floor(dataMain.temp - 273.15)}°C`;
 
-    let name = document.createElement('h4');
+    let newDiv = document.createElement("div");
+    newDiv.classList.add("weather");
+    let name = document.createElement("h4");
+    name.classList.add("country-name");
     let newH3 = document.createElement("h3");
+    newH3.classList.add("temp");
     let newImg = document.createElement("img");
-    let newText = document.createElement('p');
+    let newText = document.createElement("p");
+    newText.classList.add("weather-description");
+    let newSpan = document.createElement("span");
+    newSpan.classList.add("close");
 
     name.append(`${xhr.response.name}, ${xhr.response.sys.country}`);
     newImg.setAttribute("src", getWeatherIcon(xhr.response.weather[0].icon));
@@ -52,12 +59,20 @@ function getData(lat, lon) {
     newText.append(xhr.response.weather[0].description);
     console.log(xhr.response.name);
 
-    weather.appendChild(name)
-    weather.appendChild(newImg);
-    weather.appendChild(newH3);
-    weather.appendChild(newText)
+    newDiv.appendChild(name);
+    newDiv.appendChild(newImg);
+    newDiv.appendChild(newH3);
+    newDiv.appendChild(newText);
+    newDiv.appendChild(newSpan);
+
+    weathers.appendChild(newDiv);
+
+    newSpan.onclick = function () {
+      weathers.removeChild(newDiv);
+    }
   };
 }
+
 
 function getWeatherIcon(iconCode) {
   return `https://openweathermap.org/img/wn/${iconCode}@2x.png`;

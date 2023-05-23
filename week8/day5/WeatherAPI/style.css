@@ -1,3 +1,5 @@
+/* reset CSS */
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -42,13 +44,81 @@ table {
 	border-spacing: 0;
 }
 
+/* main CSS */
+
+nav{
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+}
+
+.input-country{
+    padding: 8px 10px;
+}
+
+.title{
+    padding: 30px 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+.weathers{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 .weather{
-    width: 180px;
+    border-radius: 6px;
+    padding: 20px 0;
+    width: 160px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: wheat;
+}
+
+.close {
+  position:relative;
+  right: -45px;
+  top: -170px;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 10px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
+.country-name{
+    font-size: 18px;
+}
+
+.temp{
+    font-size: 30px;
+}
+
+.weather-description{
+    padding-top: 15px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    font-size: 12px;
 }
 
 .weather img{
