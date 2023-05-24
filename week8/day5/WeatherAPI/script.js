@@ -2,6 +2,7 @@ const APIkey = "6bc236fa8bd5e7e03f83fd8cea3eac74";
 
 let lat = 0;
 let lon = 0;
+let flag = false;
 
 function getCoordinates(e) {
   e.preventDefault();
@@ -37,9 +38,14 @@ function getData(lat, lon) {
   xhr.send();
   xhr.responseType = "json";
   xhr.onload = function () {
+    const switcher = document.getElementsByClassName("toggle").item(0);
+
     const dataMain = xhr.response.main;
     const weathers = document.getElementsByClassName("weathers").item(0);
     let formulaToCelsium = `${Math.floor(dataMain.temp - 273.15)}°C`;
+    let formulaToFarh = `${Math.floor(
+      ((dataMain.temp - 273.15) * 9) / 5 + 32
+    )}°F`;
 
     let newDiv = document.createElement("div");
     newDiv.classList.add("weather");
@@ -69,11 +75,19 @@ function getData(lat, lon) {
 
     newSpan.onclick = function () {
       weathers.removeChild(newDiv);
+    };
+
+    switcher.onclick = function (e) {
+      if (switcher.checked) {
+        console.log(5);
+      } else {
+        console.log(6);
+      }
     }
-  };
+  }
 }
 
 
-function getWeatherIcon(iconCode) {
-  return `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
-}
+  function getWeatherIcon(iconCode) {
+    return `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+  }
