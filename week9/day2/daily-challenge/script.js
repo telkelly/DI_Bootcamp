@@ -105,26 +105,27 @@ function toJs(str) {
 }
 
 function toMorse(morseJs) {
+  let question = prompt("Write a word or sentence");
   return new Promise((res, rej) => {
-    const question = prompt("Write a word or sentence");
-    const morseTrans = [];
-    const morseObj = Object.keys(morseJs);
+    const userLettes = question.split("");
+    let morseObj = Object.keys(morseJs);
 
-    for (let i = 0; i < question.length; i++) {
-      const char = question[i].toUpperCase();
-      if (morseObj.includes(char)) {
-        morseTrans.push(morseJs[char]);
-      } else {
-        rej("Invalid character in the input.");
-      }
+    if (!userLettes.every((letter) => morseObj.includes(letter))) {
+      rej("please type lowercase letters");
+    } else {
+      res(convertToMorse(question, morseJs));
     }
-    res(morseTrans);
   });
+}
+
+function convertToMorse(word, morseJs) {
+  const letters = word.split("");
+  return letters.map((letter) => morseJs[letter]);
 }
 
 function joinWords(morseTrans) {
   const joinedMorse = morseTrans.join(" ");
-  return (document.body.innerHTML = joinWords);
+  return (document.body.innerHTML = joinedMorse);
 }
 
 toJs(morse)
