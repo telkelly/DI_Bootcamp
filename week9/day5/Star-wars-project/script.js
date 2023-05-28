@@ -1,9 +1,20 @@
 const mainDiv = document.getElementsByClassName("main").item(0);
+const loader = document.getElementById("loading");
+
+function displayLoader() {
+  loader.classList.add("display");
+}
+
+function hideLoader() {
+  return loader.classList.remove("display");
+}
 
 async function getRandom() {
   mainDiv.innerHTML = "";
+
   const randomIndex = Math.floor(Math.random() * 10);
   try {
+    displayLoader();
     const starFetch = await fetch(
       `https://www.swapi.tech/api/people/${randomIndex}`
     );
@@ -15,7 +26,7 @@ async function getRandom() {
     );
     const starPlanetData = await starFetchPlanet.json();
     const finalPlanetData = await starPlanetData.result;
-
+    hideLoader();
     const newDiv = document.createElement("div");
     const nameText = document.createElement("p");
     const genderText = document.createElement("p");
@@ -30,8 +41,8 @@ async function getRandom() {
     mainDiv.appendChild(newDiv);
 
     console.log(finalData);
-  } catch {
-    console.log("something wrong");
+  } catch (err) {
+    console.log("something wrong", err);
   }
 }
 
