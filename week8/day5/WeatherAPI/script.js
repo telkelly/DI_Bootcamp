@@ -35,10 +35,13 @@ function getCoordinates(e) {
       let newText = document.createElement("h3");
       let newText1 = document.createElement("h3");
 
-      newText.innerText = "Oops";
+      newText.innerText = "Oops! Something is wrong.";
+      newText.classList.add('ops-err')
       newDiv.appendChild(newText);
+      
 
       newText1.innerText = "There is no city, try again!";
+      newText1.classList.add("try-again-err");
       newDiv.appendChild(newText1);
 
       let newSpan = document.createElement("span");
@@ -46,6 +49,10 @@ function getCoordinates(e) {
       newDiv.appendChild(newSpan);
 
       weathers.appendChild(newDiv);
+
+      newSpan.onclick = function () {
+        weathers.removeChild(newDiv);
+      }
     }
   };
 }
@@ -130,7 +137,7 @@ function getData(lat, lon) {
     };
   } catch (error) {
     if (error) {
-      console.log(10);
+      console.log(error);
     }
   }
 }
