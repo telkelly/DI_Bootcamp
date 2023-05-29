@@ -46,7 +46,6 @@ function getCoordinates(e) {
       newDiv.appendChild(newSpan);
 
       weathers.appendChild(newDiv);
-      
     }
   };
 }
@@ -80,6 +79,12 @@ function getData(lat, lon) {
       let newImg = document.createElement("img");
       let newText = document.createElement("p");
       newText.classList.add("weather-description");
+      let newTexSunrise = document.createElement("p");
+      newTexSunrise.classList.add("sunrise");
+      let newTextSunset = document.createElement("p");
+      newTextSunset.classList.add("sunset");
+      let newTextWind = document.createElement("p");
+      newTextWind.classList.add("wind");
       let newSpan = document.createElement("span");
       newSpan.classList.add("close");
 
@@ -87,13 +92,20 @@ function getData(lat, lon) {
       newImg.setAttribute("src", getWeatherIcon(xhr.response.weather[0].icon));
       newH3.append(formulaToCelsium);
       newText.append(xhr.response.weather[0].description);
-      console.log(xhr.response.name);
+      newTexSunrise.append(
+        `Sunrise: ${converterUnix(xhr.response.sys.sunrise)}`
+      );
+      newTextSunset.append(`Sunset: ${converterUnix(xhr.response.sys.sunset)}`);
+      newTextWind.append(`Speed wind: ${xhr.response.wind.speed}`);
 
       newDiv.appendChild(name);
       newDiv.appendChild(newImg);
       newDiv.appendChild(newH3);
       newDiv.appendChild(newText);
       newDiv.appendChild(newSpan);
+      newDiv.appendChild(newTexSunrise);
+      newDiv.appendChild(newTextSunset);
+      newDiv.appendChild(newTextWind);
 
       weathers.appendChild(newDiv);
 
@@ -125,4 +137,15 @@ function getData(lat, lon) {
 
 function getWeatherIcon(iconCode) {
   return `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+}
+
+function converterUnix(data) {
+  let unix_timestamp = data;
+  var date = new Date(unix_timestamp * 1000);
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+
+  var formattedTime = hours + ":" + minutes;
+
+  return formattedTime;
 }

@@ -125,17 +125,25 @@ table {
   border-spacing: 0;
 }
 
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600&display=swap");
 /* main CSS */
+body {
+  font-family: "Karla", sans-serif;
+}
 
 nav {
   padding: 10px 0;
   display: flex;
   justify-content: center;
-  background-color: aqua;
+  background-color: #b0d595;
 }
 
 .input-country {
+  width: 230px;
   padding: 8px 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
 }
 
 .title {
@@ -146,27 +154,38 @@ nav {
 
 .weathers {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   gap: 20px;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
 .weather {
+  /* border: 1px solid gray; */
   border-radius: 6px;
   padding: 20px 0;
-  width: 160px;
+  width: 220px;
   display: flex;
+  gap: 10px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: wheat;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    3px 2px 6px 0px rgba(0, 0, 0, 0);
+  box-shadow: 0px 0px 10px -5px #000000, 3px 2px 6px 0px rgba(0, 0, 0, 0);
+}
+
+.sunrise,
+.sunset,
+.wind {
+  font-size: 16x;
+  font-weight: 300;
 }
 
 .close {
   position: relative;
-  right: -45px;
-  top: -170px;
+  right: -75px;
+  top: -200px;
   opacity: 0.3;
 }
 .close:hover {
@@ -207,61 +226,12 @@ nav {
   width: 90px;
 }
 
-.error{
+.error {
   border: 2px solid black;
   width: 200px;
   height: 200px;
 }
 
-.close-err{
-  
+.close-err {
 }
 
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-/* Hide default HTML checkbox */
-/* .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-} */
-
-/* The slider */
-/* 
-.switch input {
-  position: absolute;
-  opacity: 0;
-} */
-
-/* 
-.switch {
-  display: inline-block;
-  font-size: 20px; 
-  height: 1em;
-  width: 2em;
-  background: #BDB9A6;
-  border-radius: 1em;
-} */
-
-/* .switch div {
-  height: 1em;
-  width: 1em;
-  border-radius: 1em;
-  background: #FFF;
-  box-shadow: 0 0.1em 0.3em rgba(0,0,0,0.3);
-  -webkit-transition: all 300ms;
-     -moz-transition: all 300ms;
-          transition: all 300ms;
-} */
-/* 
-.switch input:checked + div {
-  -webkit-transform: translate3d(100%, 0, 0);
-     -moz-transform: translate3d(100%, 0, 0);
-          transform: translate3d(100%, 0, 0);
-} */
