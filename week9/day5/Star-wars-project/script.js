@@ -26,17 +26,30 @@ async function getRandom() {
     );
     const starPlanetData = await starFetchPlanet.json();
     const finalPlanetData = await starPlanetData.result;
+    console.log(finalData);
     hideLoader();
     const newDiv = document.createElement("div");
+    newDiv.classList.add("main");
     const nameText = document.createElement("p");
+    nameText.classList.add("name");
+    const heightText = document.createElement("p");
+    heightText.classList.add("description");
     const genderText = document.createElement("p");
+    genderText.classList.add("description");
     const birthYearText = document.createElement("p");
+    birthYearText.classList.add("description");
     const homeWorldText = document.createElement("p");
+    homeWorldText.classList.add("description");
 
     append(nameText, finalData.name, newDiv);
-    append(genderText, finalData.gender, newDiv);
-    append(birthYearText, finalPlanetData.properties.name, newDiv);
-    append(homeWorldText, finalData.birth_year, newDiv);
+    append(heightText, `Height: ${finalData.height}`, newDiv);
+    append(genderText, `Gender: ${finalData.gender}`, newDiv);
+    append(birthYearText, `Birth Year: ${finalData.birth_year}`, newDiv);
+    append(
+      homeWorldText,
+      `Home World: ${finalPlanetData.properties.name}`,
+      newDiv
+    );
 
     mainDiv.appendChild(newDiv);
 
