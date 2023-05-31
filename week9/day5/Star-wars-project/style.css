@@ -127,40 +127,67 @@ table {
 
 /* main CSS */
 
-.main-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 300px;
-    border: 5px solid rgb(232, 176, 34);
-    height: 200px;
+body {
+  background: url(./background.jpeg) 100%;
+  height: 100vh;
 }
 
-.main{
-    display: flex;
-    flex-direction: column;
-    font-size: 30px;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo{
+  width: 300px;
+}
+
+.main-container {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  border: 5px solid rgb(236, 190, 73);
+  border-radius: 6px;
+  height: 200px;
+  text-align: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+  gap: 10px;
+}
+
+.btn-find{
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 2px solid rgb(236, 190, 73);
+  font-size: 16px;
 }
 
 /* loading-animation */
 #loading {
-    width: 2rem;
-    height: 2rem;
-    border: 5px solid #f3f3f3;
-    border-top: 6px solid #9c41f2;
-    border-radius: 100%;
-    margin: auto;
-    display: none;
-    animation: spin 1s infinite linear;
+  width: 2rem;
+  height: 2rem;
+  border: 5px solid #f3f3f3;
+  border-top: 10px solid rgb(236, 190, 73);
+  border-radius: 100%;
+  margin: auto;
+  display: none;
+  animation: spin 1s infinite linear;
 }
 #loading.display {
-    display: block;
+  display: block;
 }
 @keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
