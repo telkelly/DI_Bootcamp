@@ -1,8 +1,18 @@
 fetchCurrencies();
 
-document.getElementById("convert").addEventListener("click", handleClick);
+document.getElementById("input").addEventListener("keyup", handleClick);
 const fromSelect = document.getElementById("from");
 const toSelect = document.getElementById("to");
+const switchBtn = document.getElementById('switch');
+
+fromSelect.addEventListener('change', handleClick)
+toSelect.addEventListener("change", handleClick);
+switchBtn.addEventListener('click', switchCurrencies)
+
+function switchCurrencies() {
+  [fromSelect.value, toSelect.value] = [toSelect.value, fromSelect.value];
+  handleClick(); 
+}
 
 function fetchCurrencies() {
   const url =
@@ -40,8 +50,6 @@ async function handleClick() {
 
   const summary = document.getElementById('summary')
 
-  
-
   const url = `https://v6.exchangerate-api.com/v6/08235d2c70859153c9f806ad/pair/${curr1}/${curr2}`;
   try {
     const res = await fetch(url);
@@ -49,6 +57,7 @@ async function handleClick() {
     const rate = resJson.conversion_rate;
     const amount = Number(input.value);
     const total = rate * amount;
+    summary.innerText = `${amount} ${curr1} = ${total}`
     console.log(total);
   } catch (err) {
     console.log(err);
