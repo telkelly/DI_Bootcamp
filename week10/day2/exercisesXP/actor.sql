@@ -1,0 +1,4 @@
+SELECT COUNT(1) FROM actor
+
+INSERT INTO actor()
+VALUES()
