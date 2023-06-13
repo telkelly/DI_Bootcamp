@@ -1,3 +1,209 @@
-.container{
-    width: 300px;
+/* CSS reset  */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* main CSS */
+
+body {
+  background-color: rgba(129, 174, 208, 0.106);
+}
+
+.container {
+  width: 350px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+.title {
+  padding-bottom: 50px;
+  font-size: 35px;
+  color: #333333;
+  text-shadow: 2px 2px 0px #ffffff, 5px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.converter {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background: rgba(87, 147, 207, 0.481);
+  padding: 30px;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 18px;
+  box-shadow: 0px 5px 9px 0px rgba(0, 0, 0, 0.25);
+}
+
+select {
+  border-radius: 4px;
+  height: 30px;
+}
+
+input {
+  height: 25px;
+  width: 250px;
+  align-self: center;
+}
+
+
+#switch {
+  background-color: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Amazon Ember",sans-serif;
+  font-size: 16px;
+  line-height: 29px;
+  padding: 5px 11px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: 100px;
+}
+
+#switch:hover {
+  background-color: #f7fafa;
+}
+
+#switch:focus {
+  border-color: #008296;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  outline: 0;
+}
+
+@media only screen and (min-width: 600px){
+    .container{
+        width: 450px;
+    }
+}
+
