@@ -1,33 +1,56 @@
-function getGif(e){
-    e.preventDefault();
-    const frm = document.forms.gifForm;
-    const searchInput = frm.elements.search.value; 
-    const apiKey = "hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My";
-    let url = "https://api.giphy.com/v1/gifs/search?q="+ encodeURIComponent(searchInput) + '&api_key=' + apiKey;
+const apiKey = "hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My";
+const searchButton = document.getElementById("searchButton");
+const deleteAllButton = document.getElementById("deleteAllButton");
+const gifContainer = document.getElementById("gifContainer");
 
-    let xhr = new XMLHttpRequest();
+searchButton.addEventListener("click", fetchRandomGif);
+deleteAllButton.addEventListener("click", deleteAllGifs);
 
-    xhr.open(
-      "GET",
-      url
-    );
+function fetchRandomGif() {
+  const categoryInput = document.getElementById("categoryInput").value;
+  if (categoryInput.trim() === "") {
+    alert("Please enter a category.");
+    return;
+  }
 
-    xhr.responseType = 'json';
-
-    xhr.onload = () => {
-        let response = xhr.response.data;
-        let randomGif = getRandom(response);
-
-        let newImg = document.createElement('img');
-        newImg.setAttribute("src", `${randomGif.url}`);
-        const div = document.getElementById('gif');
-        div.appendChild(newImg);
-    }
-
-    xhr.send()
+  const apiUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${categoryInput}`;
+  fetch(apiUrl)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.data && data.data.length > 0) {
+        const randomIndex = Math.floor(Math.random() * data.data.length);
+        const gifUrl = data.data[randomIndex].images.original.url;
+        const gifElement = createGifElement(gifUrl, categoryInput);
+        gifContainer.appendChild(gifElement);
+      } else {
+        alert("No GIF found for the specified category.");
+      }
+    })
+    .catch((error) => {
+      console.log("An error occurred while fetching the GIF:", error);
+    });
 }
 
-function getRandom(arr) {
-    let randomIndex = Math.floor(Math.random() * arr.length);
-    return arr[randomIndex]
+function createGifElement(url) {
+  const gifElement = document.createElement("div");
+  gifElement.classList.add("gif");
+
+  const gifImg = document.createElement("img");
+  gifImg.src = url;
+  gifElement.appendChild(gifImg);
+
+  const deleteButton = document.createElement("button");
+  deleteButton.textContent = "Delete";
+  deleteButton.addEventListener("click", () => {
+    gifElement.remove();
+  });
+  gifElement.appendChild(deleteButton);
+
+  return gifElement;
+}
+
+function deleteAllGifs() {
+  while (gifContainer.firstChild) {
+    gifContainer.firstChild.remove();
+  }
 }

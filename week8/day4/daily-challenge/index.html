@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dailyy</title>
-  </head>
-  <body>
-    <form name="gifForm" action="" onsubmit="getGif(event)">
-      <label for="category">Category</label>
-      <input type="text" name="search" />
-      <input type="submit" value="Get gif" />
-    </form>
-    <div id="gif"></div>
-    <script src="script.js"></script>
-  </body>
+<html>
+<head>
+  <title>Giphy Random GIF</title>
+</head>
+<body>
+  <h1>Giphy Random GIF</h1>
+  <form>
+    <input type="text" id="categoryInput" placeholder="Enter a category">
+    <button type="button" id="searchButton">Search</button>
+  </form>
+  <div id="gifContainer"></div>
+  <button type="button" id="deleteAllButton">Delete All</button>
+  <script src="script.js"></script>
+</body>
 </html>
