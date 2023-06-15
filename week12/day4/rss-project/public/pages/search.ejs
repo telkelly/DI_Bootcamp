@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<% include ../partials/head.ejs %>
+
+<body>
+  <% include ../partials/header.ejs %>
+
+  <h1>Search Page</h1>
+
+  <form>
+    <input type="text" placeholder="Search by title">
+    <input type="text" placeholder="Search by category">
+    <button type="submit">Search</button>
+  </form>
+
+  <% include ../partials/posts.ejs %>
+
+  <% include ../partials/footer.ejs %>
+</body>
+
+</html>
