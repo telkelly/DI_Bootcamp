@@ -1,23 +1,38 @@
-const expess = require("express");
+const express = require("express");
 const cors = require("cors");
-const app = expess();
+const app = express();
 const bd = require("body-parser");
 
 let Parser = require("rss-parser");
 let parser = new Parser();
 
-(async () => {
-  let feed = await parser.parseURL("https://thefactfile.org/feed/");
-  console.log(feed.title);
+app.get("/feed", async (req, res) => {
+  try {
+    const feed = await parser.parseURL("https://thefactfile.org/feed/");
 
-  feed.items.forEach((item) => {
-    console.log(item.title + ":" + item.link);
-  });
-})();
+    res.send(feed); 
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error retrieving RSS feed");
+  }
+});
 
-app.use(expess.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));
+app.use(bd.json())
 app.use(cors());
+app.use(express.static("public"));
 
-app.listen(3000, (req, res) => {
+app.set("view engine", "ejs");
+app.set("views", "./public/pages");
+
+app.get("/", (req, res) => {
+  res.render("pages/index");
+});
+
+app.get("/search", (req, res) => {
+  res.render("pages/search");
+});
+
+app.listen(3000, () => {
     console.log("listen");
 })
