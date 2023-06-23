@@ -1,8 +1,16 @@
+import './Exercise.css';
+
 const Exercise4 = () => {
+    const style_header = {
+      color: "white",
+      backgroundColor: "DodgerBlue",
+      padding: "10px",
+      fontFamily: "Arial",
+    };
     return (
       <>
-        <h1 className="red">Tag</h1>
-        <p>Paragraph</p>
+        <h1 className="red" style={style_header}>Tag</h1>
+        <p className='para'>Paragraph</p>
         <a>Link</a>
         <form>
           <label>Enter Your Name:</label>
