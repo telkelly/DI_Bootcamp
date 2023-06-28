@@ -18,7 +18,8 @@ class Phone extends Component {
 
   render() {
     return (
-      <>
+        <>
+            <hr/> Exercise-3<br/>
         <h1>My phone is a {this.state.brand}</h1>
         <p>
           It is a {this.state.color} {this.state.model} from {this.state.year}
