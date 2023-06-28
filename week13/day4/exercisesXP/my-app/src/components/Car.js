@@ -1,11 +1,24 @@
+import { Component } from "react";
 
-
-const Car = ({cars}) => {
+class Car extends Component {
+    constructor() {
+        super();
+        this.state = {
+            color: 'orange',
+        }
+    }
+    render() {
+        const { cars } = this.props;
+        const { color } = this.state;
     return (
-        <>
-            <h1>{cars.model}</h1>
-        </>
-    )
+      <>
+         Exercise: 1 <br />
+        <h1>
+          This car is {color} {cars.model}
+        </h1>
+      </>
+    );
+  }
 }
 
-export default Car
+export default Car;
