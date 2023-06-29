@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import ToDoList from "./ToDoList";
+import { useState } from "react";
 
 const Input = () => {
   const [todos, setTodos] = useState([]);
@@ -24,8 +23,14 @@ const Input = () => {
   };
 
   return (
-    <div>
-      <h1>Todo List</h1>
+    <div className="input-div">
+      <div className="todos">
+        {todos.map((todo, index) => (
+          <p key={index} onClick={() => handleDeleteTodo(index)}>
+            {todo}
+          </p>
+        ))}
+      </div>
       <input
         type="text"
         value={newTodo}
@@ -33,14 +38,6 @@ const Input = () => {
         placeholder="Enter a new todo..."
         onKeyDown={handleAddTodo}
       />
-      <div>
-        {todos.map((todo, index) => (
-          <p key={index}>
-            {todo}
-            <button onClick={() => handleDeleteTodo(index)}>Delete</button>
-          </p>
-        ))}
-      </div>
     </div>
   );
 };
