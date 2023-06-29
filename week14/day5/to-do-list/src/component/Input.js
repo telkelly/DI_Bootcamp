@@ -25,11 +25,15 @@ const Input = () => {
   return (
     <div className="input-div">
       <div className="todos">
-        {todos.map((todo, index) => (
-          <p key={index} onClick={() => handleDeleteTodo(index)}>
-            {todo}
-          </p>
-        ))}
+        {todos.length === 0 ? (
+          <p className="no-todos">Nothing left to do, go rest or add something!</p>
+        ) : (
+          todos.map((todo, index) => (
+            <p className="todos-p" key={index} onClick={() => handleDeleteTodo(index)}>
+              {todo}
+            </p>
+          ))
+        )}
       </div>
       <input
         type="text"
