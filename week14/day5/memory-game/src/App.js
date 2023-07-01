@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Card from "./components/Card";
 import cards from "./superheroes.json";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   const [superheroes, setSuperheroes] = useState([]);
@@ -74,10 +75,7 @@ const App = () => {
 
   return (
     <div className="cards">
-      <nav>
-        <h2>Current Score: {score}</h2>
-        <h2>Top Score: {topScore}</h2>
-      </nav>
+      <Navbar score={score} topScore={topScore}/>
       {superheroes.map((superhero) => (
         <Card
           key={superhero.id}
