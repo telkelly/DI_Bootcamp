@@ -5,8 +5,8 @@ const Card = ({ superhero, onClick }) => {
   return (
     <div className="card" onClick={() => onClick(id)}>
       <img src={image} alt={name} />
-      <h3>{name}</h3>
-      <p>{occupation}</p>
+      <h3>Name: {name}</h3>
+      <p>Occupation: {occupation}</p>
     </div>
   );
 };

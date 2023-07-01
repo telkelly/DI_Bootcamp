@@ -10,13 +10,13 @@ const App = () => {
   const [topScore, setTopScore] = useState(0);
 
   useEffect(() => {
-    setSuperheroes(cards.superheroes)
-  }, [])
-
-   
+    setSuperheroes(cards.superheroes);
+  }, []);
 
   const handleCardClick = (id) => {
-    const clickedSuperhero = superheroes.find(superhero => superhero.id === id);
+    const clickedSuperhero = superheroes.find(
+      (superhero) => superhero.id === id
+    );
 
     if (clickedSuperhero.clicked) {
       setScore(0);
@@ -64,26 +64,25 @@ const App = () => {
     );
   };
 
- 
-
   useEffect(() => {
     if (score > topScore) {
       setTopScore(score);
     }
   }, [score, topScore]);
 
-
   return (
-    <div className="cards">
-      <Navbar score={score} topScore={topScore}/>
-      {superheroes.map((superhero) => (
-        <Card
-          key={superhero.id}
-          superhero={superhero}
-          onClick={handleCardClick}
-        />
-      ))}
-    </div>
+    <>
+      <Navbar score={score} topScore={topScore} />
+      <div className="cards">
+        {superheroes.map((superhero) => (
+          <Card
+            key={superhero.id}
+            superhero={superhero}
+            onClick={handleCardClick}
+          />
+        ))}
+      </div>
+    </>
   );
-}
+};
 export default App;
