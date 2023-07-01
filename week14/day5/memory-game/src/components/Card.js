@@ -1,16 +1,12 @@
-const Card = (props) => {
-  const superheroes = props.superheroes;
+import { useEffect, useState } from "react";
+
+const Card = ({ superhero, onClick }) => {
+  const { id, name, image } = superhero;
+
   return (
-    <div>
-      {Object.entries(superheroes).map(([key, value], idx) => {
-        return (
-          <div key={key}>
-            <img src={value.image} alt="" />
-            <p>Name: {value.name}</p>
-            <p>Occupation: {value.occupation}</p>
-          </div>
-        );
-      })}
+    <div className="card" onClick={() => onClick(id)}>
+      <img src={image} alt={name} />
+      <h3>{name}</h3>
     </div>
   );
 };
