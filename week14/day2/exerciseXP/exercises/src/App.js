@@ -1,10 +1,14 @@
 import './App.css';
 import BuggyCounter from './components/BuggyCounter';
+import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
   return (
     <div className="App">
-      <BuggyCounter/>
+      <ErrorBoundary>
+        <BuggyCounter />
+        <BuggyCounter />
+      </ErrorBoundary>
     </div>
   );
 }

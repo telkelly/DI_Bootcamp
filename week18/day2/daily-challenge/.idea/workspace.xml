@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ce998dba-d12c-4154-adf6-4370385d1e31" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/exercises.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day3/daily.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../daily-challenge" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week1/day4/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week1/day4/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week1/day5" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week1/day5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week12/day1/product-api/routes/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week12/day1/product-api/routes/products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week13/day4/exercisesXP/my-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week13/day4/exercisesXP/my-app/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week14/day1/product-api-react/src/components/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week14/day1/product-api-react/src/components/Product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week14/day1/product-api-react/src/components/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week14/day1/product-api-react/src/components/Products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week14/day2/exerciseXP/exercises/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week14/day2/exerciseXP/exercises/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week14/day2/exerciseXP/exercises/src/components/BuggyCounter.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week14/day2/exerciseXP/exercises/src/components/BuggyCounter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week14/day2/exerciseXP/exercises/src/components/ErrorBoundary.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week14/day2/exerciseXP/exercises/src/components/ErrorBoundary.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week3/day6" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week3/day6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week4/day3" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week4/day3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week4/day4" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week4/day4" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2T4g2OAwCi1R0udjbouOvHBctrC" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ce998dba-d12c-4154-adf6-4370385d1e31" name="Changes" comment="" />
+      <created>1690307558853</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1690307558853</updated>
+      <workItem from="1690307563049" duration="432000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

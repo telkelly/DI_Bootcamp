@@ -3,6 +3,7 @@ import Garage from './components/Garage'
 import Car from "./components/Car";
 import Events from "./components/Events";
 import Phone from "./components/Phone";
+import Color from "./components/Color";
 
 function App() {
   const carinfo = { name: "Ford", model: "Mustang" };
@@ -11,6 +12,7 @@ function App() {
     <Garage size='big' />
     <Events />
     <Phone />
+    <Color/>
   </div>;
 }
 

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Products = (props) => {
     const [products, setProducts] = useState([]);
@@ -76,6 +77,7 @@ const Products = (props) => {
                   key={item.id}
                 >
                   <h3>{item.name}</h3> <p>{item.price}</p>
+                  <Link to={`/product/${item.id}`}>Shop now</Link>
                 </div>
               );
             })

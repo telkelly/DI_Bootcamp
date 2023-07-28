@@ -1,13 +1,37 @@
-import { useState } from "react";
+import { Component } from "react";
 
-const BuggyBoundary = () => {
-    const [error, setError] = useState(0);
-    
-    return (
-        <div>
-        <h1>Buggy Couner</h1>
-        <h2 onClick={handleClick}>{counter > 5 ? throwError : counter}</h2>
-    </div>);
-};
+class ErrorBoundary extends Component {
+  constructor(props) {
+    super();
+    this.state = {
+      error: null,
+      errorInfo: null,
+    };
+  }
 
-export default BuggyBoundary;
+  getDerivedStateFromError(error) {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    this.setState({
+      error: error,
+      errorInfo: errorInfo
+    })
+  }
+
+    render(){
+        if (this.state.error) {
+          return (
+            <details style={{ whiteSpace: 'pre-wrap' }}>
+              {this.state.error && this.state.error.toString()}
+              <br />
+              {this.state.errorInfo.componentStack}
+            </details>
+          )
+        }
+      return this.props.children
+    }
+}
+
+export default ErrorBoundary;
