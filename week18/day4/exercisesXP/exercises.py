@@ -46,17 +46,17 @@ print(float_sequence)
 
 # exercise-5
 
-for i in range(1, 21):
-    print(i)
-
-num=[]
-for i in range(1, 21):
-    num.append(i)
-    print(num)
-
-for i in num:
-    if num.index(i)  % 2 == 0:
-        print(i)
+# for i in range(1, 21):
+#     print(i)
+#
+# num=[]
+# for i in range(1, 21):
+#     num.append(i)
+#     print(num)
+#
+# for i in num:
+#     if num.index(i)  % 2 == 0:
+#         print(i)
 
 # exercise-6
 
@@ -97,26 +97,48 @@ for i in num:
 
 # exercise-9
 
-age = int(input("Type your age:"))
-family=['John', 'Kevin']
-people = []
+# family_members = int(input("Enter the number of family members: "))
+# total_cost = 0
+#
+# for _ in range(family_members):
+#     age = int(input("Enter the age of the person: "))
+#
+#     if age < 3:
+#         ticket_price = 0
+#     elif 3 <= age <= 12:
+#         ticket_price = 10
+#     else:
+#         ticket_price = 15
+#
+#     total_cost += ticket_price
+#
+# print("Total cost for the family's tickets:", total_cost)
+#
+# teenagers = ["Alice", "Bob", "Charlie", "David", "Emma"]
+# teenagers_allowed = []
+#
+# for teen in teenagers:
+#     age = int(input(f"Enter the age of {teen}: "))
+#     if 16 <= age <= 21:
+#         teenagers_allowed.append(teen)
+#
+# print("Final list of teenagers allowed to watch the movie:", teenagers_allowed)
 
-if age > 3 and age < 12:
-    people.append(10)
-elif age > 12:
-    people.append(15)
-elif age < 3:
-    people.append(0)
 
-print(people)
+# exercise-10
 
+sandwich_orders = ["Tuna sandwich", "Pastrami sandwich", "Avocado sandwich", "Pastrami sandwich", "Egg sandwich", "Chicken sandwich", "Pastrami sandwich"]
 
+while "Pastrami sandwich" in sandwich_orders:
+    sandwich_orders.remove("Pastrami sandwich")
 
+finished_sandwiches = []
 
-# print(f"Your price for pizza is {10 + (len(toppings) * 2.5)}")
+while sandwich_orders:
+    current_sandwich = sandwich_orders.pop(0)
+    finished_sandwiches.append(current_sandwich)
+    print(f"I made your {current_sandwich.lower()}")
 
-
-
-
-
-
+print("\nAll orders have been prepared:")
+for sandwich in finished_sandwiches:
+    print(sandwich)
