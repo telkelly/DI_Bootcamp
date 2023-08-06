@@ -1,5 +1,7 @@
 # exercise-1
+import datetime
 import random
+
 def get_random_temp(season):
     if season == 12 or season <= 2:
          return random.randint(-10, 16)
@@ -91,6 +93,55 @@ def ask_questions():
             print(f"Correct Answer: {correct_answer}")
             print()
 
-ask_questions()
+# ask_questions()
 
 # exercise-3
+
+def get_age(year, month, day):
+    today_year = datetime.date.today().year
+    today_month = datetime.date.today().month
+    today_day = datetime.date.today().day
+
+    age = today_year - year - ((today_month, today_day) < (month, day))
+
+    return age
+
+print(get_age(2000, 2, 24))
+
+def can_retire(gender, date_of_birth):
+    global retireOrNot
+    date = date_of_birth.split('/')
+    age = get_age(int(date[0]), int(date[1]), int(date[2]))
+    if gender == 'f':
+        retireOrNot = age - 62
+    else:
+        retireOrNot = age - 67
+    if retireOrNot < 0:
+        return False
+    return True
+
+ask_user_data = input("Write your full date of birth in format yyyy/m/d: ")
+ask_user_sex = input("Write your sex in format f/m: ")
+
+answer = can_retire(ask_user_sex, ask_user_data)
+
+if answer:
+    print("You can retire")
+else:
+    print('You can not retire')
+
+# exercise-4
+def strange_cacl(x):
+    X_str = str(x)
+
+    part1 = int(X_str)
+    part2 = int(X_str * 2)
+    part3 = int(X_str * 3)
+    part4 = int(X_str * 4)
+
+    total_sum = part1 + part2 + part3 + part4
+
+    return total_sum
+
+print(strange_cacl(3))
+
