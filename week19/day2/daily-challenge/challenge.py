@@ -13,7 +13,6 @@ row = []
 
 def convertMatrixToStringByColumn(matrix_string):
     matrix_as_list = matrix_string.split("\n")
-    print(matrix_as_list)
     columns_letters = []
     for i in range(3):
         for j in range(len(matrix_as_list)):
