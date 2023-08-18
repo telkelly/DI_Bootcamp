@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f9b3070a-ea6d-4212-88a8-db21f51b3a7b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../day1/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day1/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day1/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day1/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day1/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day2/daily-challenge/.idea/daily-challenge.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day2/daily-challenge/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day2/daily-challenge/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day2/daily-challenge/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day2/daily-challenge/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day2/daily-challenge/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day2/exercisesXP/.idea/exercisesXP.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day2/exercisesXP/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day2/exercisesXP/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day2/exercisesXP/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day2/exercisesXP/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day2/exercisesXP/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day4/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day4/.idea/day4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day4/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day4/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day4/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day4/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tic-tac-toe/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tic-tac-toe/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tic-tac-toe/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tic-tac-toe/.idea/tic-tac-toe.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tic-tac-toe/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tic-tac-toe/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../week20/day1/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../week20/day1/.idea/day1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../week20/day1/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../week20/day1/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../week20/day1/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../week20/day1/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week1/day5" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week1/day5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day1/exer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day1/exer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day2/daily-challenge/challenge.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day2/daily-challenge/challenge.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week20/day1/exercises.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week20/day1/exercises.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week3/day6" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week3/day6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week4/day3" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week4/day3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week4/day4" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week4/day4" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2ThjSJzPyYnKcxmNhanutm5JQzM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/kelly/Documents/DI_Bootcamp/week19/day5/daily-challenge",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f9b3070a-ea6d-4212-88a8-db21f51b3a7b" name="Changes" comment="" />
+      <created>1691502204569</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1691502204569</updated>
+      <workItem from="1691502205708" duration="3685000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/daily_challenge$challenges.coverage" NAME="challenges Coverage Results" MODIFIED="1691506707266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
