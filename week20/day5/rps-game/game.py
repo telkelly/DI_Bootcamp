@@ -34,6 +34,3 @@ class Game:
         self.get_user_item()
         self.computers_choice = self.get_computer_item()
         self.get_game_result()
-
-game = Game()
-game.play()

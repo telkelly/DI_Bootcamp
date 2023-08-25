@@ -21,6 +21,8 @@ class RockPaperScissors(Game):
                 game.play()
             elif self.user_choice == 's':
                 self.print_results(game.scores)
+            else:
+                return print("Bye Bye")
 
 new = RockPaperScissors()
 new.main()
