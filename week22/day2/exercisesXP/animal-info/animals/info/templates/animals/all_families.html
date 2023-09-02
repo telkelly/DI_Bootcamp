@@ -5,6 +5,12 @@
     <title>all families</title>
 </head>
 <body>
-
+    <h1>All families information</h1>
+    <p>Family Name:</p>
+    <ol>
+        {% for item in data %}
+        <li>{{ item.name }}</li>
+        {% endfor %}
+    </ol>
 </body>
 </html>

@@ -5,11 +5,17 @@
     <title>animal</title>
 </head>
 <body>
-    <h1>Animal is you</h1>
-<ul>
-        {% for item in data %}
-            <li>{{ item.name }}</li>
-        {% endfor %}
+    <h1>Animal information:</h1>
+    <ul>
+        {% if animal %}
+        <p>Name: {{ animal.name }}</p>
+        <p>Legs: {{ animal.legs }}</p>
+        <p>Weight: {{ animal.weight }}</p>
+        <p>Height: {{ animal.height }}</p>
+        <p>Speed: {{ animal.speed }}</p>
+        {% else %}
+        <p>Animal not found</p>
+        {% endif %}
     </ul>
 </body>
 </html>

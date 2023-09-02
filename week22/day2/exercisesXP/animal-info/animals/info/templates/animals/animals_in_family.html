@@ -5,6 +5,19 @@
     <title>animals in family</title>
 </head>
 <body>
-
+    <h1>Animal information:</h1>
+    <ul>
+        {% if animal %}
+            {% for item in animal %}
+                <p>Name: {{ item.name }}</p>
+                <p>Legs: {{ item.legs }}</p>
+                <p>Weight: {{ item.weight }}</p>
+                <p>Height: {{ item.height }}</p>
+                <p>Speed: {{ item.speed }}</p>
+            {% endfor %}
+        {% else %}
+            <p>Animal not found</p>
+        {% endif %}
+    </ul>
 </body>
 </html>

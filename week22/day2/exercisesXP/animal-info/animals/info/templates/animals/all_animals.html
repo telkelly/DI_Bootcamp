@@ -5,6 +5,15 @@
     <title>all animals</title>
 </head>
 <body>
-
+    <h1>All animals information</h1>
+    <ul>
+        {% for item in data %}
+        <li>Name: {{ item.name }}</li>
+        <p>Legs: {{ item.legs }}</p>
+        <p>Weight: {{ item.weight }}</p>
+        <p>Height: {{ item.height }}</p>
+        <p>Speed: {{ item.speed }}</p>
+        {% endfor %}
+    </ul>
 </body>
 </html>
