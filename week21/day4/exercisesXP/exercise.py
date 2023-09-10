@@ -1,5 +1,6 @@
 # exercise-1
 import random
+import json
 
 list = []
 
@@ -33,3 +34,30 @@ def main():
     return print(get_random_sentence(value))
 
 main()
+
+# exercise-2
+
+
+sampleJson = """{ 
+   "company":{ 
+      "employee":{ 
+         "name":"emma",
+         "payable":{ 
+            "salary":7000,
+            "bonus":800
+         }
+      }
+   }
+}"""
+
+data = json.loads(sampleJson)
+
+salary = data["company"]["employee"]["payable"]["salary"]
+bd = data["company"]["employee"]["birth_date"] = "2000-24-02"
+
+with open("updated_data.json", "w") as json_file:
+    json.dump(data, json_file, indent=4)
+
+print("Salary:", salary)
+print("Birth date:", bd)
+
