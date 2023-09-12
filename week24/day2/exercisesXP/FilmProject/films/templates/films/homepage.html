@@ -1,0 +1,16 @@
+{% extends 'partials/base.html' %}
+
+{% block content %}
+{% include 'partials/navbar.html' %}
+
+<!-- Add content for your homepage below -->
+<div class="container mt-4">
+   <h1>Welcome to FilmProject</h1>
+   <!-- You can loop through films, display content, etc. -->
+   <ul>
+        {% for film in all_films %}
+            <li>{{ film.title }} (Release Date: {{ film.release_date }})</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

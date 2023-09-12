@@ -26,7 +26,7 @@ class Director(models.Model):
 
 class Film(models.Model):
     title = models.CharField(max_length=255)
-    release_date = models.DateField()
+    release_date = models.DateField(default=timezone.now)
     created_in_country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='films_created')
     available_in_countries = models.ManyToManyField(Country, related_name='films_available')
     category = models.ManyToManyField(Category)
