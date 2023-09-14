@@ -1,3 +1,4 @@
+from django.http import HttpResponseForbidden
 from django.urls import reverse_lazy
 from django.views import generic
 from .models import Film, Director
@@ -16,9 +17,19 @@ class FilmCreateView(generic.CreateView):
     template_name = 'film/addFilm.html'
     success_url = reverse_lazy('homepage')
 
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated or not request.user.is_superuser:
+            return HttpResponseForbidden()
+        return super().dispatch(request, *args, **kwargs)
+
 
 class DirectorCreateView(generic.CreateView):
     model = Director
     form_class = DirectorForm
     template_name = 'director/addDirector.html'
     success_url = reverse_lazy('homepage')
+
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated or not request.user.is_superuser:
+            return HttpResponseForbidden()
+        return super().dispatch(request, *args, **kwargs)

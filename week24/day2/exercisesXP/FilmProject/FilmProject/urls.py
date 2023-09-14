@@ -6,5 +6,6 @@ urlpatterns = [
    path('films/', include('films.urls')),
    path('film/', include('films.urls')),
    path('director/', include('films.urls')),
+   path('accounts/', include('accounts.urls')),
 ]
 
