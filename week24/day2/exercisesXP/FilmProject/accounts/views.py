@@ -14,7 +14,7 @@ class SignUpView(View):
 
     def get(self, request, *args, **kwargs):
         form = self.form_class()
-        return render(request, self.template_name, {'form':form})
+        return render(request, self.template_name, {'form': form})
 
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
@@ -38,7 +38,8 @@ class SignUpView(View):
         else:
             form = SignUpForm()
 
-        return render(request, 'accounts/signup.html', {'form':form})
+        return render(request, 'accounts/register.html', {'form':form})
+
 
 class LoginView(generic.View):
     form_class = LoginForm
@@ -67,10 +68,12 @@ class LoginView(generic.View):
 
         return render(request, self.template_name, {'form':form})
 
+
 class LogoutView(View):
     def get(self, request, *args, **kwargs):
         logout(request)
         return redirect('/films/homepage/')
+
 
 class ProfileView(DetailView):
     model = User
