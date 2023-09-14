@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View, generic
 from django.views.generic import DetailView
 
-from FilmProject.accounts.forms import SignUpForm, LoginForm
+from .forms import SignUpForm, LoginForm
 
 
 # Create your views here.
@@ -40,43 +40,43 @@ class SignUpView(View):
 
         return render(request, 'accounts/signup.html', {'form':form})
 
-    class LoginView(generic.View):
-        form_class = LoginForm
-        template_name = 'accounts/login.html'
+class LoginView(generic.View):
+    form_class = LoginForm
+    template_name = 'accounts/login.html'
 
-        def get(self, request, *args, **kwargs):
-            form = self.form_class()
-            return render(request, self.template_name, {'form':form})
+    def get(self, request, *args, **kwargs):
+        form = self.form_class()
+        return render(request, self.template_name, {'form':form})
 
-        def post(self, request, *args, **kwargs):
-            form = self.form_class(request.POST)
-            if form.is_valid():
-                username = form.cleaned_data['username']
-                password = form.cleaned_data['password']
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
 
-                user = authenticate(request, username = username, password = password)
+            user = authenticate(request, username = username, password = password)
 
-                if user is not None:
-                    if user.is_active:
-                        login(request, user)
-                        return redirect('/films/homepage/')
-                    else:
-                        form.add_error(None, 'This account is inactive.')
+            if user is not None:
+                if user.is_active:
+                    login(request, user)
+                    return redirect('/films/homepage/')
                 else:
-                    form.add_error(None, 'Invalid username or password.')
+                    form.add_error(None, 'This account is inactive.')
+            else:
+                form.add_error(None, 'Invalid username or password.')
 
-            return render(request, self.template_name, {'form':form})
+        return render(request, self.template_name, {'form':form})
 
-        class LogoutView(View):
-            def get(self, request, *args, **kwargs):
-                logout(request)
-                return redirect('/films/homepage/')
+class LogoutView(View):
+    def get(self, request, *args, **kwargs):
+        logout(request)
+        return redirect('/films/homepage/')
 
-        class ProfileView(DetailView):
-            model = User
-            template_name = 'accounts/userprofile.html'
-            context_object_name = 'user_profile'  # This is the name you'd use in your template
+class ProfileView(DetailView):
+    model = User
+    template_name = 'accounts/userprofile.html'
+    context_object_name = 'user_profile'  # This is the name you'd use in your template
 
-            def get_object(self):
-                user_id = self.kwargs.get('user_id')
-                return get_object_or_404(User, id = user_id)
+    def get_object(self):
+        user_id = self.kwargs.get('user_id')
+        return get_object_or_404(User, id = user_id)
