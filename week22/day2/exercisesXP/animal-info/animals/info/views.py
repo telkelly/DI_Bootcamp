@@ -1,14 +1,19 @@
 from django.shortcuts import render
-from .data import animals, families
+from .data import animals
+from .models import Animal, Family
 
 
 # Create your views here.
 def display_all_animals(request):
-    return render(request, 'animals/all_animals.html', {'data': animals})
+    all_animals = Animal.objects.all()
+    context = {'animals': all_animals}
+    return render(request, 'animals/all_animals.html', {'data': context})
 
 
 def display_all_families(request):
-    return render(request, 'animals/all_families.html', {'data': families})
+    all_families = Family.objects.all()
+    context = {'families': all_families}
+    return render(request, 'animals/all_families.html', {'data': context})
 
 
 def display_one_animal(request, animal_id):
@@ -17,7 +22,6 @@ def display_one_animal(request, animal_id):
         if entry.get('id') == animal_id:
             animal = entry
             break
-
     return render(request, 'animals/animal.html', {'animal': animal})
 
 
