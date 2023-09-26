@@ -16,6 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+import sys
+
+sys.path.append("..")
 from ..info import views
 
 urlpatterns = [
