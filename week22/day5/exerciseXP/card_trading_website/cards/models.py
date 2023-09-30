@@ -13,7 +13,6 @@ class User(AbstractUser):
         return self.username
 
 
-
 class Card(models.Model):
     name_character = models.CharField(max_length = 255)
     species = models.CharField(max_length = 255)
