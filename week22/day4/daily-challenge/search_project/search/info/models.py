@@ -8,6 +8,7 @@ class Phone(models.Model):
     name = models.CharField(max_length = 255)
     email = models.EmailField(unique=True)
     phone_number = PhoneNumberField()
+    address = models.CharField(max_length = 255)
 
     def __str__(self):
         return str(self.phone_number)

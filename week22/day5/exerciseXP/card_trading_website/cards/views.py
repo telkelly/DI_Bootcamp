@@ -49,7 +49,7 @@ def buy_one_card(request, card_id, user_id):
 
         return redirect('user-profile', user_id = user.id)
     else:
-        return redirect('user-profile', user_id = user.id)
+        return redirect('card-detail', card_id = card.id)
 
 
 def sell_one_card(request, card_id, user_id):

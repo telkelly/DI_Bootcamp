@@ -18,7 +18,7 @@ class Command(BaseCommand):
         Card.objects.all().delete()
 
         for character in characters:
-            name_character = character['name']
+            name_character = character.get('name')
             species = character.get('species', '')
             house = character.get('house', '')
             image_url = character.get('image', '')
