@@ -7,4 +7,5 @@ urlpatterns = [
     path('profile/<int:user_id>/', views.user_profile, name='user-profile'),
     path('cards/<int:card_id>/buy/<user_id>', views.buy_one_card, name = 'buy-one-card'),
     path('cards/<int:card_id>/sell/<user_id>', views.sell_one_card, name = 'sell-one-card'),
+    path('leaderboard/', views.leaderboard, name='leaderboard'),
 ]

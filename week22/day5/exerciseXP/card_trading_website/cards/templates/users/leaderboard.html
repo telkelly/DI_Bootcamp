@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Leaderboard</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Points</th>
+            <th>Cards Owned</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.username }}</td>
+            <td>{{ user.points }}</td>
+            <td>
+                <ul>
+                    {% for card in cards %}
+                    <li>{{ card.name_character }}</li>
+                    {% endfor %}
+                </ul>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

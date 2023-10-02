@@ -69,3 +69,11 @@ def sell_one_card(request, card_id, user_id):
         return redirect('home')
 
     return redirect('user-profile', user_id = user.id)
+
+
+def leaderboard(request):
+    users = User.objects.order_by('points')
+    cards = Card.objects.all()
+
+    context = {'users': users, 'cards': cards}
+    return render(request, 'users/leaderboard.html', context)
