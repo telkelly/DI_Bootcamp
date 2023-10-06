@@ -1,10 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Tasks</title>
 </head>
 <body>
-$END$
+   <h1>Create Todo</h1>
+   <button id="show-form-btn">Add new task</button>
+   <div class="form-container">
+       <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+   </div>
+
+
+    <h2>Todo List</h2>
+    <ul>
+        {% for todo in todos %}
+            <li>
+                <strong>Title:</strong> {{ todo.title }}<br>
+                <strong>Details:</strong> {{ todo.details }}<br>
+                <strong>Date Creation:</strong> {{ todo.date_creation }}<br>
+                <strong>Deadline Date:</strong> {{ todo.deadline_date }}<br>
+            </li>
+        {% empty %}
+            <p>No todos available.</p>
+        {% endfor %}
+    </ul>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const showFormButton = document.getElementById('show-form-btn');
+            const formContainer = document.querySelector('.form-container');
+
+            showFormButton.addEventListener('click', function() {
+                if (formContainer.style.display === 'none' || formContainer.style.display === '') {
+                    formContainer.style.display = 'block';
+                } else {
+                    formContainer.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
