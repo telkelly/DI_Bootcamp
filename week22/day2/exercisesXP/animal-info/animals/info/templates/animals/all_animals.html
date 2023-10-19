@@ -7,8 +7,8 @@
 <body>
     <h1>All animals information</h1>
     <ul>
-        {% for item in data %}
-        <li>Name: {{ item.name }}</li>
+        {% for item in data.animals %}
+        <li>Name: {{ item.family.name }}</li>
         <p>Legs: {{ item.legs }}</p>
         <p>Weight: {{ item.weight }}</p>
         <p>Height: {{ item.height }}</p>

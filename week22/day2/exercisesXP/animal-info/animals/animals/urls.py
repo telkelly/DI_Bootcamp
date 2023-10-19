@@ -16,14 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from animals.info import views as info_views
 
 
 urlpatterns = [
     path('', include('info.urls')),
-    path('animals/', info_views.views.display_all_animals),
-    path('families/', info_views.views.display_all_families),
-    path('animal/<int:animal_id>/', info_views.views.display_one_animal),
-    path('/animal_in_family/<int:animal_id>/', info_views.views.display_animal_per_family),
     path('admin/', admin.site.urls),
 ]

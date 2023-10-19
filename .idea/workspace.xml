@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="83fae2b7-1c85-4300-b14a-c0d0d1952502" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/week1/day5" beforeDir="false" afterPath="$PROJECT_DIR$/week1/day5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week23/day4/exerciseXP/gipny_project/gifs/populate_gifs.py" beforeDir="false" afterPath="$PROJECT_DIR$/week23/day4/exerciseXP/gipny_project/gifs/populate_gifs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/day6" beforeDir="false" afterPath="$PROJECT_DIR$/week3/day6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week4/day3" beforeDir="false" afterPath="$PROJECT_DIR$/week4/day3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week4/day4" beforeDir="false" afterPath="$PROJECT_DIR$/week4/day4" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2Wr5pbNYGkY4wuNkCaHIvlxivoe" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/kelly/Documents/DI_Bootcamp",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="83fae2b7-1c85-4300-b14a-c0d0d1952502" name="Changes" comment="" />
+      <created>1697478042673</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1697478042673</updated>
+      <workItem from="1697478043990" duration="4000" />
+    </task>
+    <servers />
+  </component>
+</project>
