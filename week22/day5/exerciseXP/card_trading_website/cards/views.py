@@ -66,7 +66,7 @@ def sell_one_card(request, card_id, user_id):
         card.previous_owner = user
         card.save()
 
-        return redirect('home')
+        return redirect('card-detail', card_id = card.id)
 
     return redirect('user-profile', user_id = user.id)
 
