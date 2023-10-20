@@ -72,8 +72,22 @@ def sell_one_card(request, card_id, user_id):
 
 
 def leaderboard(request):
-    users = User.objects.order_by('points')
-    cards = Card.objects.all()
+    users = User.objects.all().order_by('points')
 
-    context = {'users': users, 'cards': cards}
+    users_with_cards = []
+
+    for user in users:
+        owned_cards = user.cards_owned.all()
+
+        user_data = {
+            'user':user,
+            'owned_cards': owned_cards,
+        }
+
+        users_with_cards.append(user_data)
+
+    context = {
+        'users_with_cards': users_with_cards,
+    }
+
     return render(request, 'users/leaderboard.html', context)

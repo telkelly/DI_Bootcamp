@@ -1,29 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Leaderboard</h2>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Username</th>
-            <th>Points</th>
-            <th>Cards Owned</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for user in users %}
-        <tr>
-            <td>{{ user.username }}</td>
-            <td>{{ user.points }}</td>
-            <td>
-                <ul>
-                    {% for card in cards %}
-                    <li>{{ card.name_character }}</li>
-                    {% endfor %}
-                </ul>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<h1>Leaderboard</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Username</th>
+                <th>Points</th>
+                <th>Owned Cards</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user_data in users_with_cards %}
+            <tr>
+                <td>{{ forloop.counter }}</td>  <!-- Rank -->
+                <td>{{ user_data.user.username }}</td>  <!-- Username -->
+                <td>{{ user_data.user.points }}</td>  <!-- Points -->
+                <td>
+                    <ul>
+                        {% for card in user_data.owned_cards %}
+                        <li>{{ card.name_character }}</li>  <!-- List of owned cards -->
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
