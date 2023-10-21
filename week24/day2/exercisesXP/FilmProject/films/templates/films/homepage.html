@@ -19,6 +19,19 @@
                             {% if not forloop.last %}, {% endif %}
                         {% endfor %}
                     </p>
+                    <h5>Reviews:</h5>
+                    {% for review in film.reviews.all %}
+                        <div class="mb-3">
+                            <strong>Rating:</strong> {{ review.rating }}<br>
+                            <strong>Review:</strong> {{ review.review_text }}<br>
+                            <strong>Date:</strong> {{ review.review_date|date:"F j, Y" }}
+                        </div>
+                    {% empty %}
+                        <p>No reviews for this film yet.</p>
+                    {% endfor %}
+            </div>
+        </div>
+
                 </div>
             </div>
         </div>
