@@ -3,8 +3,12 @@
 {% block content %}
 {% include 'partials/navbar.html' %}
 
-    <form method="">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Submit</button>
+<div class="container mt-4">
+    <h2>Add Director</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Add Director</button>
+    </form>
+</div>
 {% endblock %}
